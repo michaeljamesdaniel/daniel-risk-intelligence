@@ -451,14 +451,14 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
             {/* DRI Column */}
             <div className="flex flex-col h-full">
-              <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-8 text-white shadow-xl h-full flex flex-col">
+              <div className="bg-gradient-to-br from-gray-100 to-gray-50 rounded-2xl p-8 text-gray-900 shadow-xl h-full flex flex-col border border-gray-300">
                 <div className="flex items-center justify-between mb-6">
                   <h3 className="text-2xl font-bold">Daniel Risk Intelligence</h3>
                   <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
                     <Check className="w-6 h-6 text-white" />
                   </div>
                 </div>
-                <p className="text-gray-300 mb-8 leading-relaxed">
+                <p className="text-gray-700 mb-8 leading-relaxed">
                   Built for executives. Every insight drives action.
                 </p>
                 
@@ -468,8 +468,8 @@ export default function Home() {
                       <span className="text-white font-bold text-sm">✓</span>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-white mb-1">Concise & Focused</h4>
-                      <p className="text-gray-400 text-sm">8 pages + 2-page summary</p>
+                      <h4 className="font-semibold text-gray-900 mb-1">Concise & Focused</h4>
+                      <p className="text-gray-600 text-sm">8 pages + 2-page summary</p>
                     </div>
                   </div>
                   
@@ -478,8 +478,8 @@ export default function Home() {
                       <span className="text-white font-bold text-sm">✓</span>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-white mb-1">Executive-Ready</h4>
-                      <p className="text-gray-400 text-sm">Readable in minutes</p>
+                      <h4 className="font-semibold text-gray-900 mb-1">Executive-Ready</h4>
+                      <p className="text-gray-600 text-sm">Readable in minutes</p>
                     </div>
                   </div>
                   
@@ -488,8 +488,8 @@ export default function Home() {
                       <span className="text-white font-bold text-sm">✓</span>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-white mb-1">Key Judgments</h4>
-                      <p className="text-gray-400 text-sm">Clear confidence levels</p>
+                      <h4 className="font-semibold text-gray-900 mb-1">Key Judgments</h4>
+                      <p className="text-gray-600 text-sm">Clear confidence levels</p>
                     </div>
                   </div>
                   
@@ -498,8 +498,8 @@ export default function Home() {
                       <span className="text-white font-bold text-sm">✓</span>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-white mb-1">Business Impact</h4>
-                      <p className="text-gray-400 text-sm">Direct decision relevance</p>
+                      <h4 className="font-semibold text-gray-900 mb-1">Business Impact</h4>
+                      <p className="text-gray-600 text-sm">Direct decision relevance</p>
                     </div>
                   </div>
                 </div>
@@ -872,7 +872,7 @@ export default function Home() {
             <div>
               <h3 className="text-2xl font-semibold mb-4">Michael Daniel, CEO</h3>
               <p className="text-gray-600 mb-6">
-                Veteran intelligence professional with over 20 years of experience in strategic analysis, risk assessment, and intelligence support to senior decision-makers. Holds a Master's degree in Strategic Intelligence from the National Intelligence University.
+                Veteran intelligence professional with over 20 years of experience in strategic analysis, risk assessment, and intelligence support to senior decision-makers. Holds a Master's degree in Strategic Intelligence from the National Intelligence University in Washington, D.C.
               </p>
               <p className="text-gray-600 mb-6">
                 Extensive background in analyzing complex political, economic, and security environments with deep expertise in Central and Eastern Europe, the Balkans, and Baltic regions. Specialized in delivering actionable intelligence that enables executives to navigate regional complexities and make informed business decisions.
