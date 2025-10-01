@@ -342,30 +342,34 @@ export default function Home() {
           
           <div className="space-y-3 sm:space-y-4 md:space-y-6 mb-6 sm:mb-8 md:mb-12">
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-2 sm:px-4">
-              Strategic intelligence for business executives navigating complexities in Central and Eastern Europe.
+              Geopolitical intelligence for business executives in Central &amp; Eastern Europe
             </p>
           </div>
-          
-          <div className="flex items-center justify-center space-x-6 sm:space-x-8 mb-8 sm:mb-12">
-            <div className="flex items-center">
+
+          {/* Stats: responsive grid so items don't overflow on small screens */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto mb-8 sm:mb-12 px-2">
+            <div className="flex items-center justify-center">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-2 sm:mr-3">
                 <span className="text-blue-600 font-bold text-sm sm:text-base lg:text-lg">20+</span>
               </div>
               <span className="text-gray-600 text-sm sm:text-base">Years Experience</span>
             </div>
-            <div className="flex items-center">
+
+            <div className="flex items-center justify-center">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-2 sm:mr-3">
                 <span className="text-blue-600 font-bold text-sm sm:text-base lg:text-lg">500+</span>
               </div>
               <span className="text-gray-600 text-sm sm:text-base">Reports Delivered</span>
             </div>
-            <div className="flex items-center">
+
+            <div className="flex items-center justify-center">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-2 sm:mr-3">
                 <span className="text-blue-600 font-bold text-sm sm:text-base lg:text-lg">50+</span>
               </div>
               <span className="text-gray-600 text-sm sm:text-base">Countries Analyzed</span>
             </div>
-            <div className="flex items-center">
+
+            <div className="flex items-center justify-center">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-2 sm:mr-3">
                 <span className="text-blue-600 font-bold text-sm sm:text-base lg:text-lg">100%</span>
               </div>
