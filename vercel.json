@@ -20,6 +20,10 @@
       "dest": "/api/$1"
     },
     {
+      "src": "^/(favicon\\.ico|robots\\.txt|sitemap\\.xml|eagle-logo\\.svg|logo\\.svg|eagle-logo-large\\.svg)",
+      "dest": "/$1"
+    },
+    {
       "src": "^/(.*)",
       "dest": "/"
     }
