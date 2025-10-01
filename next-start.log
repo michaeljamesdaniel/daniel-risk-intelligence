@@ -1,7 +1,0 @@
-   ▲ Next.js 15.3.5
-   - Local:        http://localhost:3100
-   - Network:      http://10.0.2.100:3100
-
- ✓ Starting...
- ⚠ The static directory has been deprecated in favor of the public directory. https://nextjs.org/docs/messages/static-dir-deprecated
- ✓ Ready in 646ms
