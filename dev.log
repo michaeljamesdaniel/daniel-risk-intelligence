@@ -1,44 +1,7 @@
-[33m[nodemon] 3.1.10[39m
-[33m[nodemon] to restart at any time, enter `rs`[39m
-[33m[nodemon] watching path(s): server.ts src/**/*[39m
-[33m[nodemon] watching extensions: ts,tsx,js,jsx[39m
-[32m[nodemon] starting `npx tsx server.ts`[39m
 > Ready on http://0.0.0.0:3000
 > Socket.IO server running at ws://0.0.0.0:3000/api/socketio
  ○ Compiling / ...
- ✓ Compiled / in 8.6s (786 modules)
- GET / 200 in 9276ms
- ○ Compiling /favicon.ico ...
- ✓ Compiled /favicon.ico in 588ms (436 modules)
- GET /favicon.ico 200 in 537ms
- GET /favicon.ico 200 in 757ms
-[32m[nodemon] restarting due to changes...[39m
-[32m[nodemon] starting `npx tsx server.ts`[39m
-> Ready on http://0.0.0.0:3000
-> Socket.IO server running at ws://0.0.0.0:3000/api/socketio
- ○ Compiling / ...
- ✓ Compiled / in 11.1s (786 modules)
- GET / 200 in 11649ms
-[32m[nodemon] restarting due to changes...[39m
-[32m[nodemon] starting `npx tsx server.ts`[39m
-> Ready on http://0.0.0.0:3000
-> Socket.IO server running at ws://0.0.0.0:3000/api/socketio
- ○ Compiling / ...
- ✓ Compiled / in 8.1s (786 modules)
- GET / 200 in 8898ms
-[32m[nodemon] restarting due to changes...[39m
-[32m[nodemon] starting `npx tsx server.ts`[39m
-> Ready on http://0.0.0.0:3000
-> Socket.IO server running at ws://0.0.0.0:3000/api/socketio
- ○ Compiling / ...
- ✓ Compiled / in 9.1s (786 modules)
- GET / 200 in 9588ms
- ○ Compiling /favicon.ico ...
- ✓ Compiled /favicon.ico in 522ms (436 modules)
-[32m[nodemon] restarting due to changes...[39m
-[32m[nodemon] starting `npx tsx server.ts`[39m
-> Ready on http://0.0.0.0:3000
-> Socket.IO server running at ws://0.0.0.0:3000/api/socketio
- ○ Compiling / ...
- ✓ Compiled / in 8.6s (786 modules)
- GET / 200 in 9102ms
+ ✓ Compiled / in 8.9s (786 modules)
+ GET / 200 in 9552ms
+ GET / 200 in 110ms
+ GET / 200 in 110ms

@@ -72,7 +72,18 @@ npm start
 
 Open [http://localhost:3000](http://localhost:3000) to see your application running.
 
-## 🤖 Powered by Z.ai
+## � Developer quickstart (watch)
+
+If you want the dev server to automatically restart when you edit files, use the watch script added to the project:
+
+```bash
+# Start the watched dev server (restarts on changes)
+npm run dev:watch
+```
+
+This runs `nodemon` and executes `tsx server.ts` under a single supervisor so you won't get multiple competing processes. Logs are written to `dev-watch.log` when run in the background.
+
+## �🤖 Powered by Z.ai
 
 This scaffold is optimized for use with [Z.ai](https://chat.z.ai) - your AI assistant for:
 
