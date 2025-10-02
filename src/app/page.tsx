@@ -68,28 +68,34 @@ export default function Home() {
     }
 
     setFormStatus('submitting');
-    
+
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      console.log('Form submitted:', formData);
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+
+      const json = await res.json();
+
+      if (!res.ok) {
+        console.error('Contact API error:', json);
+        setErrorMessage(json?.error || 'Failed to send message');
+        setFormStatus('error');
+        return;
+      }
+
       setFormStatus('success');
-      
+
       // Reset form after successful submission
       setTimeout(() => {
-        setFormData({
-          name: '',
-          company: '',
-          email: '',
-          message: ''
-        });
+        setFormData({ name: '', company: '', email: '', message: '' });
         setFormStatus('idle');
       }, 3000);
-      
-    } catch (error) {
+
+    } catch (error: any) {
       console.error('Form submission error:', error);
-      setErrorMessage('Something went wrong. Please try again.');
+      setErrorMessage(error?.message || 'Something went wrong. Please try again.');
       setFormStatus('error');
     }
   };
@@ -751,7 +757,7 @@ export default function Home() {
               <div className="space-y-3">
                 <div className="bg-gray-50 rounded-lg p-3">
                   <p className="text-sm text-gray-700 italic">
-                    "How would escalation in the Russia–Ukraine conflict affect our logistics hub in Eastern Poland?"
+                    "How would escalation from the Russian invasion of Ukraine affect our logistics hub in Eastern Poland?"
                   </p>
                 </div>
                 <div className="bg-gray-50 rounded-lg p-3">
