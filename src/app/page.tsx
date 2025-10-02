@@ -349,32 +349,32 @@ export default function Home() {
           {/* Stats: responsive grid so items don't overflow on small screens */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto mb-8 sm:mb-12 px-2">
             {/* Each stat stacks number above label on mobile and switches to row layout on sm+ */}
-            <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left justify-center">
+            <div className="flex flex-col sm:flex-row items-center text-center sm:text-left justify-center">
               <div className="w-12 h-12 sm:w-14 sm:h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-2 sm:mb-0 sm:mr-3 flex-shrink-0">
                 <span className="text-blue-600 font-bold text-base sm:text-lg lg:text-xl">20+</span>
               </div>
-              <span className="text-gray-600 text-xs sm:text-sm">Years Experience</span>
+              <span className="text-gray-600 text-xs sm:text-sm sm:h-14 flex items-center justify-center sm:justify-start leading-tight">Years Experience</span>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left justify-center">
+            <div className="flex flex-col sm:flex-row items-center text-center sm:text-left justify-center">
               <div className="w-12 h-12 sm:w-14 sm:h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-2 sm:mb-0 sm:mr-3 flex-shrink-0">
                 <span className="text-blue-600 font-bold text-base sm:text-lg lg:text-xl">500+</span>
               </div>
-              <span className="text-gray-600 text-xs sm:text-sm">Reports Delivered</span>
+              <span className="text-gray-600 text-xs sm:text-sm sm:h-14 flex items-center justify-center sm:justify-start leading-tight">Reports Delivered</span>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left justify-center">
+            <div className="flex flex-col sm:flex-row items-center text-center sm:text-left justify-center">
               <div className="w-12 h-12 sm:w-14 sm:h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-2 sm:mb-0 sm:mr-3 flex-shrink-0">
                 <span className="text-blue-600 font-bold text-base sm:text-lg lg:text-xl">50+</span>
               </div>
-              <span className="text-gray-600 text-xs sm:text-sm">Countries Analyzed</span>
+              <span className="text-gray-600 text-xs sm:text-sm sm:h-14 flex items-center justify-center sm:justify-start leading-tight">Countries Analyzed</span>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left justify-center">
+            <div className="flex flex-col sm:flex-row items-center text-center sm:text-left justify-center">
               <div className="w-12 h-12 sm:w-14 sm:h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-2 sm:mb-0 sm:mr-3 flex-shrink-0">
                 <span className="text-blue-600 font-bold text-base sm:text-lg lg:text-xl">100%</span>
               </div>
-              <span className="text-gray-600 text-xs sm:text-sm">Executive-Ready</span>
+              <span className="text-gray-600 text-xs sm:text-sm sm:h-14 flex items-center justify-center sm:justify-start leading-tight">Executive-Ready</span>
             </div>
           </div>
           
