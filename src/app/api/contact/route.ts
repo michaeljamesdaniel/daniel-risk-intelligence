@@ -3,6 +3,7 @@ import nodemailer from 'nodemailer';
 
 export async function POST(request: Request) {
   try {
+
     const body = await request.json();
     const { name, company, email, message } = body;
 
@@ -13,7 +14,8 @@ export async function POST(request: Request) {
 
     // SMTP configuration via environment variables
     const smtpHost = process.env.SMTP_HOST;
-    const smtpPort = process.env.SMTP_PORT ? parseInt(process.env.SMTP_PORT) : undefined;
+    const smtpPortRaw = process.env.SMTP_PORT;
+    const smtpPort = smtpPortRaw ? parseInt(smtpPortRaw, 10) : undefined;
     const smtpUser = process.env.SMTP_USER;
     const smtpPass = process.env.SMTP_PASS;
 
@@ -27,7 +29,7 @@ export async function POST(request: Request) {
     const transporter = nodemailer.createTransport({
       host: smtpHost,
       port: smtpPort,
-      secure: smtpPort === 465, // true for 465, false for other ports
+      secure: smtpPortRaw === '465' || smtpPort === 465, // true for 465 (SSL), false otherwise
       auth: {
         user: smtpUser,
         pass: smtpPass
@@ -35,13 +37,12 @@ export async function POST(request: Request) {
     });
 
     const mailOptions = {
-      // Use site address as the verified sender; put visitor email in replyTo to avoid spoofing/DMARC issues
-  from: 'michael@danielriskintelligence.com',
-  replyTo: `${name} <${email}>`,
-  to: 'michael@danielriskintelligence.com',
-      subject: `Website contact form: ${company} - ${name}`,
-      text: `Name: ${name}\nCompany: ${company}\nEmail: ${email}\n\nMessage:\n${message}`,
-      html: `<p><strong>Name:</strong> ${name}</p><p><strong>Company:</strong> ${company}</p><p><strong>Email:</strong> ${email}</p><hr/><p>${message.replace(/\n/g, '<br/>')}</p>`
+      from: smtpUser,
+      replyTo: `${name} <${email}>`,
+      to: smtpUser,
+      subject: 'New Contact Form Submission',
+      text: `Name: ${name}\nCompany: ${company ?? ''}\nEmail: ${email}\n\nMessage:\n${message}`,
+      html: `<p><strong>Name:</strong> ${name}</p><p><strong>Company:</strong> ${company ?? ''}</p><p><strong>Email:</strong> ${email}</p><hr/><p>${message.replace(/\n/g, '<br/>')}</p>`
     } as const;
 
     await transporter.sendMail(mailOptions as any);
