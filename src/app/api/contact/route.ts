@@ -6,8 +6,9 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { name, company, email, message } = body;
 
-    if (!name || !company || !email || !message) {
-      return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
+    // company is optional for the frontend page; require name, email, message
+    if (!name || !email || !message) {
+      return NextResponse.json({ error: 'Missing required fields: name, email, message' }, { status: 400 });
     }
 
     // SMTP configuration via environment variables
@@ -35,9 +36,9 @@ export async function POST(request: Request) {
 
     const mailOptions = {
       // Use site address as the verified sender; put visitor email in replyTo to avoid spoofing/DMARC issues
-      from: 'contact@danielriskintelligence.com',
-      replyTo: `${name} <${email}>`,
-      to: 'contact@danielriskintelligence.com',
+  from: 'michael@danielriskintelligence.com',
+  replyTo: `${name} <${email}>`,
+  to: 'michael@danielriskintelligence.com',
       subject: `Website contact form: ${company} - ${name}`,
       text: `Name: ${name}\nCompany: ${company}\nEmail: ${email}\n\nMessage:\n${message}`,
       html: `<p><strong>Name:</strong> ${name}</p><p><strong>Company:</strong> ${company}</p><p><strong>Email:</strong> ${email}</p><hr/><p>${message.replace(/\n/g, '<br/>')}</p>`

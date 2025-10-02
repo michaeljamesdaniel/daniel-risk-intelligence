@@ -151,7 +151,7 @@ Route (app)                 Size     First Load JS
 ## 📞 Contact Information Integration
 
 ### **Contact Methods**
-- **Email**: contact@danielriskintelligence.com
+- **Email**: michael@danielriskintelligence.com
 - **Phone**: +1 (757) 287-7089
 - **WhatsApp**: Integrated messaging
 - **Form**: Professional consultation request

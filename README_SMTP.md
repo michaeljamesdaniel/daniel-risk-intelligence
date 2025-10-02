@@ -1,6 +1,6 @@
 Contact form / SMTP setup
 
-This project includes a server-side API endpoint that sends contact form submissions to contact@danielriskintelligence.com.
+This project includes a server-side API endpoint that sends contact form submissions to michael@danielriskintelligence.com.
 
 Environment variables
 - SMTP_HOST - SMTP server host (e.g., smtp.sendgrid.net)
@@ -28,4 +28,4 @@ npm run dev
 
 Notes
 - For best deliverability, use a transactional email provider and configure SPF/DKIM for @danielriskintelligence.com.
-- The API uses `contact@danielriskintelligence.com` as the envelope `from` and sets the visitor's email as `replyTo` to avoid DMARC/forgery issues with many providers.
+- The API uses `michael@danielriskintelligence.com` as the envelope `from` and sets the visitor's email as `replyTo` to avoid DMARC/forgery issues with many providers.

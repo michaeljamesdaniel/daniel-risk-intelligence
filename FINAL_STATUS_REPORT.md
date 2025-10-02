@@ -66,7 +66,7 @@
 ## 📞 Contact Integration
 
 ### **Multi-Channel Contact**
-- ✅ **Email**: contact@danielriskintelligence.com
+- ✅ **Email**: michael@danielriskintelligence.com
 - ✅ **Phone**: +1 (757) 287-7089
 - ✅ **WhatsApp**: Integrated messaging button
 - ✅ **Contact Form**: Professional validation and feedback

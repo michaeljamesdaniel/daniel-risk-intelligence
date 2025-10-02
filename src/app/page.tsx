@@ -303,11 +303,11 @@ export default function Home() {
               <div className="mt-8 pt-8 border-t border-gray-200">
                 <div className="space-y-3">
                   <a 
-                    href="mailto:contact@danielriskintelligence.com"
+                    href="mailto:michael@danielriskintelligence.com"
                     className="flex items-center space-x-3 text-gray-600 hover:text-gray-900 transition-colors py-2"
                   >
                     <Mail className="h-5 w-5" />
-                    <span className="text-sm">contact@danielriskintelligence.com</span>
+                    <span className="text-sm">michael@danielriskintelligence.com</span>
                   </a>
                   <a 
                     href="https://wa.me/17572877089" 
@@ -1060,10 +1060,10 @@ export default function Home() {
                 <li className="flex items-center hover:text-white transition-colors">
                   <Mail className="w-4 h-4 mr-3 flex-shrink-0" />
                   <a 
-                    href="mailto:contact@danielriskintelligence.com"
+                    href="mailto:michael@danielriskintelligence.com"
                     className="hover:text-white transition-colors"
                   >
-                    contact@danielriskintelligence.com
+                    michael@danielriskintelligence.com
                   </a>
                 </li>
                 <li className="flex items-center hover:text-white transition-colors">
