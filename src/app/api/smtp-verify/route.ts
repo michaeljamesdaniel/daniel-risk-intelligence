@@ -5,7 +5,7 @@ import { NextResponse } from 'next/server';
 // to confirm whether Vercel/local env vars are set. Remove after verification.
 
 export async function GET() {
-  const vars = ['SMTP_HOST', 'SMTP_PORT', 'SMTP_USER', 'SMTP_PASS'] as const;
+  const vars = ['SMTP_SERVER', 'SMTP_SERVER_PORT', 'SMTP_USER', 'SMTP_PASS'] as const;
   const presence: Record<string, boolean> = {};
   for (const v of vars) {
     presence[v] = Boolean(process.env[v]);

@@ -13,15 +13,21 @@ export async function POST(request: Request) {
     }
 
     // SMTP configuration via environment variables
-    const smtpHost = process.env.SMTP_HOST;
-    const smtpPortRaw = process.env.SMTP_PORT;
+    const smtpHost = process.env.SMTP_SERVER;
+    const smtpPortRaw = process.env.SMTP_SERVER_PORT;
     const smtpPort = smtpPortRaw ? parseInt(smtpPortRaw, 10) : undefined;
     const smtpUser = process.env.SMTP_USER;
     const smtpPass = process.env.SMTP_PASS;
 
+    // Debug: log which SMTP env vars are present at runtime (do not log secret values)
+    console.log('SMTP_SERVER', process.env.SMTP_SERVER);
+    console.log('SMTP_SERVER_PORT', process.env.SMTP_SERVER_PORT);
+    console.log('SMTP_USER', process.env.SMTP_USER);
+    console.log('SMTP_PASS', process.env.SMTP_PASS ? '✅ SET' : '❌ MISSING');
+
     if (!smtpHost || !smtpPort || !smtpUser || !smtpPass) {
       return NextResponse.json(
-        { error: 'SMTP not configured. Please set SMTP_HOST, SMTP_PORT, SMTP_USER and SMTP_PASS.' },
+        { error: 'SMTP not configured. Please set SMTP_SERVER, SMTP_SERVER_PORT, SMTP_USER and SMTP_PASS.' },
         { status: 500 }
       );
     }
