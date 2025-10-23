@@ -163,7 +163,7 @@ export default function Home() {
                 What We Cover
               </button>
               <button 
-                onClick={() => scrollToSection('how-it-works')}
+                onClick={() => scrollToSection('types-of-reports')}
                 className="text-gray-600 hover:text-gray-900 transition-all duration-200 text-sm font-medium hover:scale-105 transform"
               >
                 How Our Reports Work
@@ -275,7 +275,7 @@ export default function Home() {
                   What We Cover
                 </button>
                 <button 
-                  onClick={() => scrollToSection('how-it-works')}
+                  onClick={() => scrollToSection('types-of-reports')}
                   className="text-left text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors py-3 px-4 rounded-lg text-base font-medium"
                 >
                   How Our Reports Work
@@ -397,7 +397,7 @@ export default function Home() {
               variant="outline" 
               size="lg"
               className="border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 px-4 sm:px-6 md:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg w-full sm:w-auto min-h-[44px] transition-all duration-200 hover:scale-105 transform shadow-md hover:shadow-lg"
-              onClick={() => scrollToSection('how-it-works')}
+              onClick={() => scrollToSection('types-of-reports')}
             >
               See How Our Reports Work
             </Button>
