@@ -480,7 +480,7 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-900 mb-1">Concise & Focused</h4>
-                      <p className="text-gray-600 text-sm">8 pages + 2-page summary</p>
+                      <p className="text-gray-600 text-sm">10-25 pages + executive summary</p>
                     </div>
                   </div>
                   
