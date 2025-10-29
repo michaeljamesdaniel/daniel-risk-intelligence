@@ -1,49 +1,49 @@
 "use client"
-                    <li className="text-slate-800"><span className="text-emerald-600 mr-2">→</span> DRI: Explicit documentation of what we don't know, its potential impact, and the specific conditions that would change our assessment.</li>
-                    <li className="text-slate-500"><span className="mr-2">—</span> Top Firms: Brief limitations sections with scope exclusions and standard disclaimers.</li>
+                    <li className="text-slate-800"><span className="text-emerald-600 mr-2">→</span> DRI: Clear documentation of what we currently understand and what remains to be determined, how it might affect your strategic decisions, and what changes would prompt us to update our perspective.</li>
+                    <li className="text-slate-500"><span className="mr-2">—</span> Top Firms: Brief notes on analysis boundaries and standard disclaimers.</li>
                   
                 
               
-              {/* Monitoring Frameworks */}
-              <card className="border-slate-200">
-                <cardheader>
-                  <cardtitle className="text-slate-900 flex items-center gap-2">
-                    <span className="text-emerald-600">✓</span> Monitoring Frameworks
-                  </cardtitle>
-                  <carddescription className="text-slate-600">How to detect when to reassess</carddescription>
-                </cardheader>
-                <cardcontent>
+              {/* Ongoing Partnership */}
+              <Card className="border-slate-200">
+                <CardHeader>
+                  <CardTitle className="text-slate-900 flex items-center gap-2">
+                    <span className="text-emerald-600">✓</span> Ongoing Partnership
+                  </CardTitle>
+                  <CardDescription className="text-slate-600">Knowing when to revisit our work together</CardDescription>
+                </CardHeader>
+                <CardContent>
                   <ul className="text-sm space-y-2">
-                    <li className="text-slate-800"><span className="text-emerald-600 mr-2">→</span> DRI: Specific leading indicators for each key finding, with clear triggers and recommended review frequencies.</li>
-                    <li className="text-slate-500"><span className="mr-2">—</span> Top Firms: General guidance to monitor market conditions and standard KPI tracking.</li>
+                    <li className="text-slate-800"><span className="text-emerald-600 mr-2">→</span> DRI: Early warning signs tailored to your specific situation, with clear guidance on when we should reconnect and how often we recommend checking in.</li>
+                    <li className="text-slate-500"><span className="mr-2">—</span> Top Firms: General advice to watch market conditions and track business performance.</li>
                   </ul>
-                </cardcontent>
-              </card>
-              {/* Reporting Standards */}
-              <card className="border-slate-200">
-                <cardheader>
-                  <cardtitle className="text-slate-900 flex items-center gap-2">
-                    <span className="text-emerald-600">✓</span> Reporting Standards
-                  </cardtitle>
-                  <carddescription className="text-slate-600">How insights are communicated</carddescription>
-                </cardheader>
-                <cardcontent>
+                </CardContent>
+              </Card>
+              {/* Clear Communication */}
+              <Card className="border-slate-200">
+                <CardHeader>
+                  <CardTitle className="text-slate-900 flex items-center gap-2">
+                    <span className="text-emerald-600">✓</span> Clear Communication
+                  </CardTitle>
+                  <CardDescription className="text-slate-600">How we share insights with you</CardDescription>
+                </CardHeader>
+                <CardContent>
                   <ul className="text-sm space-y-2">
-                    <li className="text-slate-800"><span className="text-emerald-600 mr-2">→</span> DRI: Structured executive summaries with clear bottom-line conclusions, quantified confidence levels, and inline evidence quality markers.</li>
-                    <li className="text-slate-500"><span className="mr-2">—</span> Top Firms: Pyramid-structured recommendations with confidence implied rather than explicitly calibrated.</li>
+                    <li className="text-slate-800"><span className="text-emerald-600 mr-2">→</span> DRI: Executive summaries that get straight to the point, with transparent confidence indicators and clear markers showing the strength of our supporting information.</li>
+                    <li className="text-slate-500"><span className="mr-2">—</span> Top Firms: Structured recommendations with implicit confidence assumptions rather than openly stated.</li>
                   </ul>
-                </cardcontent>
-              </card>
+                </CardContent>
+              </Card>
             
           
           {/* CTA row */}
           <div className="mt-10 flex flex-wrap items-center gap-3">
-            <button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
-              href="#contact">Discuss your mandate
-            </button>
-            <button asChild variant="secondary" className="border-slate-300 text-slate-700 hover:bg-slate-50">
-              href="#services">Explore services
-            </button>
+            <Button asChild className="bg-blue-600 hover:bg-blue-700 text-white" size="lg">
+              <a href="#contact">Discuss your mandate</a>
+            </Button>
+            <Button asChild className="border-slate-300 text-slate-700 hover:bg-slate-50" variant="secondary">
+              <a href="#services">Explore services</a>
+            </Button>
           </div>
         
       
