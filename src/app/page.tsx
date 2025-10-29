@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 
 export default function Home() {
@@ -54,10 +53,10 @@ export default function Home() {
           </div>
 
           <div className="mt-10 flex flex-wrap items-center gap-3">
-            <a href="#contact" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg text-lg">
+            <a className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg text-lg" href="#contact">
               Discuss your mandate
             </a>
-            <a href="#services" className="border border-slate-300 text-slate-700 hover:bg-slate-50 px-6 py-3 rounded-lg">
+            <a className="border border-slate-300 text-slate-700 hover:bg-slate-50 px-6 py-3 rounded-lg" href="#services">
               Explore services
             </a>
           </div>
