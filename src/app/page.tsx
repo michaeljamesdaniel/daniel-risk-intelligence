@@ -1,14 +1,47 @@
-'use client'
-import Image from 'next/image'
-import Link from 'next/link'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+"use client"
+import Image from "next/image"
+import Link from "next/link"
+
+// UI
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-white text-slate-900">
+      {/* Sticky, accessible navbar */}
+      <header className="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+        <nav aria-label="Primary" className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
+          <div className="flex items-center gap-3">
+            <Image src="/DRI-Logo.jpg" alt="Daniel Risk Intelligence" width={28} height={28} className="h-7 w-7 rounded-sm" />
+            <Link href="#home" className="text-sm font-semibold text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600">Daniel Risk Intelligence</Link>
+          </div>
+          <div className="hidden items-center gap-6 text-sm text-slate-700 sm:flex">
+            <a href="#home" className="hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded px-1">Home</a>
+            <a href="#about" className="hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded px-1">About</a>
+            <a href="#services" className="hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded px-1">Services</a>
+            <a href="#methodology" className="hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded px-1">Methodology</a>
+            <a href="#contact" className="hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded px-1">Contact</a>
+          </div>
+          {/* Mobile menu button */}
+          <div className="sm:hidden">
+            <a href="#nav-menu" className="inline-flex items-center justify-center rounded-md border border-slate-300 px-2.5 py-1.5 text-sm font-medium text-slate-700 hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600" aria-controls="nav-menu">Menu</a>
+          </div>
+        </nav>
+        {/* Mobile sheet */}
+        <div id="nav-menu" className="sm:hidden">
+          <div className="mx-4 mb-3 grid gap-1 rounded-md border border-slate-200 bg-white p-2 text-sm">
+            <a href="#home" className="rounded px-2 py-1 hover:bg-slate-50">Home</a>
+            <a href="#about" className="rounded px-2 py-1 hover:bg-slate-50">About</a>
+            <a href="#services" className="rounded px-2 py-1 hover:bg-slate-50">Services</a>
+            <a href="#methodology" className="rounded px-2 py-1 hover:bg-slate-50">Methodology</a>
+            <a href="#contact" className="rounded px-2 py-1 hover:bg-slate-50">Contact</a>
+          </div>
+        </div>
+      </header>
+
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[#0B1F3A] text-white">
+      <section id="home" className="relative overflow-hidden bg-[#0B1F3A] text-white scroll-mt-20">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:flex lg:items-center lg:gap-12 lg:py-28">
           <div className="max-w-2xl">
             <div className="mb-8 flex items-center gap-4">
@@ -70,9 +103,21 @@ export default function Home() {
         </svg>
       </section>
 
+      {/* Credibility bar */}
+      <section aria-label="Client types and recognition" className="border-b border-slate-100 bg-white">
+        <div className="mx-auto max-w-7xl px-6 py-6">
+          <div className="grid grid-cols-2 items-center gap-6 text-xs text-slate-500 sm:grid-cols-4 sm:text-sm">
+            <div className="flex items-center gap-2"><span className="h-2 w-2 rounded-full bg-emerald-500" aria-hidden /> PE & VC backed</div>
+            <div className="flex items-center gap-2"><span className="h-2 w-2 rounded-full bg-blue-500" aria-hidden /> Global corporates</div>
+            <div className="flex items-center gap-2"><span className="h-2 w-2 rounded-full bg-amber-500" aria-hidden /> Family offices</div>
+            <div className="flex items-center gap-2"><span className="h-2 w-2 rounded-full bg-fuchsia-500" aria-hidden /> Industry awards (placeholder)</div>
+          </div>
+        </div>
+      </section>
+
       {/* About */}
-      <section className="border-b border-slate-100 bg-white">
-        <div className="mx-auto max-w-7xl px-6 py-12 grid gap-8 lg:grid-cols-3">
+      <section id="about" className="border-b border-slate-100 bg-white scroll-mt-20">
+        <div className="mx-auto grid max-w-7xl gap-8 px-6 py-12 lg:grid-cols-3">
           <div className="lg:col-span-1">
             <h2 className="text-2xl font-semibold text-slate-900">About</h2>
             <p className="mt-2 text-slate-600">
@@ -81,7 +126,15 @@ export default function Home() {
             </p>
             <p className="mt-3 text-sm text-slate-500">Region focus: CEE markets with opaque disclosure and cross‑border complexity.</p>
           </div>
-          <div className="lg:col-span-2 grid sm:grid-cols-2 gap-4">
+          <div className="lg:col-span-2 grid gap-4 sm:grid-cols-2">
+            <div className="rounded-md border border-slate-100 p-4">
+              <div className="text-xs uppercase tracking-wider text-slate-500">Leadership</div>
+              <div className="mt-1 text-slate-700 text-sm">Senior‑led team with IC and top‑tier consulting backgrounds. Bios available on request.</div>
+            </div>
+            <div className="rounded-md border border-slate-100 p-4">
+              <div className="text-xs uppercase tracking-wider text-slate-500">Region</div>
+              <div className="mt-1 text-slate-700 text-sm">CEE coverage with local‑language collection and cross‑border legal/accounting partners.</div>
+            </div>
             <div className="rounded-md border border-slate-100 p-4">
               <div className="text-xs uppercase tracking-wider text-slate-500">Evidence Quality</div>
               <div className="mt-1 text-slate-700">GOLD authoritative | SILVER credible | BRONZE triangulated</div>
@@ -95,7 +148,7 @@ export default function Home() {
       </section>
 
       {/* What We Do */}
-      <section id="services" className="bg-slate-50">
+      <section id="services" className="bg-slate-50 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-6 py-16">
           <div className="max-w-2xl">
             <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">What we do</h2>
@@ -104,20 +157,20 @@ export default function Home() {
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
-                title: 'Transaction Intelligence',
+                title: "Transaction Intelligence",
                 desc:
-                  'Pre‑acquisition due diligence with GOLD/SILVER/BRONZE evidence ratings, ACH testing, and calibrated judgments; maps People‑Reputation‑Control‑Continuity risks and recommends deal terms.'
+                  "Pre‑acquisition due diligence with GOLD/SILVER/BRONZE evidence ratings, ACH testing, and calibrated judgments; maps People‑Reputation‑Control‑Continuity risks and recommends deal terms.",
               },
               {
-                title: 'Strategic Advisory',
+                title: "Strategic Advisory",
                 desc:
-                  'Market entry and digital transformation strategies using hypothesis‑driven research, scenario design, and probability‑calibrated forecasts with indicator frameworks.'
+                  "Market entry and digital transformation strategies using hypothesis‑driven research, scenario design, and probability‑calibrated forecasts with indicator frameworks.",
               },
               {
-                title: 'Integration Services',
+                title: "Integration Services",
                 desc:
-                  '100‑day integration plans with culture, systems, and synergy roadmaps; risk‑based triggers, calibrated projections, and owner‑assigned milestones.'
-              }
+                  "100‑day integration plans with culture, systems, and synergy roadmaps; risk‑based triggers, calibrated projections, and owner‑assigned milestones.",
+              },
             ].map((s) => (
               <Card className="border-slate-200" key={s.title}>
                 <CardHeader>
@@ -134,7 +187,7 @@ export default function Home() {
       </section>
 
       {/* Methodology */}
-      <section className="bg-white">
+      <section id="methodology" className="bg-white scroll-mt-20">
         <div className="mx-auto max-w-7xl px-6 py-16">
           <div className="max-w-2xl">
             <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">Methodology</h2>
@@ -178,6 +231,15 @@ export default function Home() {
               </CardContent>
             </Card>
           </div>
+          {/* Process CTA */}
+          <div className="mt-10 flex flex-wrap items-center gap-3">
+            <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+              <Link href="#contact">Discuss your mandate</Link>
+            </Button>
+            <Button asChild variant="secondary" className="border-slate-300 text-slate-700 hover:bg-slate-50">
+              <Link href="#about">Meet the team</Link>
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -185,59 +247,4 @@ export default function Home() {
       <section className="bg-slate-50">
         <div className="mx-auto max-w-7xl px-6 py-16">
           <div className="max-w-2xl">
-            <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">Why clients choose us</h2>
-            <p className="mt-2 text-slate-600">Transparent evidence, tested hypotheses, calibrated probability, and adversarial validation.</p>
-          </div>
-          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {[ 'Evidence transparency', 'Hypothesis testing', 'Calibrated probability', 'Adversarial review' ].map((t) => (
-              <Card className="border-slate-200" key={t}>
-                <CardHeader>
-                  <CardTitle className="text-slate-900">{t}</CardTitle>
-                  <CardDescription className="text-slate-600">
-                    {t === 'Evidence transparency' && 'Every source rated GOLD/SILVER/BRONZE with gaps identified.'}
-                    {t === 'Hypothesis testing' && 'ACH exposes contradictory facts traditional approaches miss.'}
-                    {t === 'Calibrated probability' && 'Standard IC ranges prevent overconfidence or vague hedging.'}
-                    {t === 'Adversarial review' && 'Red Team challenges conclusions before delivery.'}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="text-sm text-slate-500">One‑line metric: Decision clarity up, rework down.</div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="bg-[#0B1F3A] text-white" id="contact">
-        <div className="mx-auto max-w-7xl px-6 py-16 lg:flex lg:items-center lg:justify-between">
-          <div className="max-w-2xl">
-            <h2 className="text-2xl font-semibold sm:text-3xl">Ready to talk?</h2>
-            <p className="mt-2 text-blue-100/90">We respond within one business day.</p>
-          </div>
-          <div className="mt-6 lg:mt-0">
-            <Button asChild size="lg" className="bg-blue-500 hover:bg-blue-600 text-white">
-              <Link href="mailto:info@danielrisk.com">Email us</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="border-t border-slate-100 bg-white">
-        <div className="mx-auto max-w-7xl px-6 py-10 flex flex-wrap items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <Image alt="DRI" className="h-7 w-7" height={28} src="/DRI-Logo.jpg" width={28} />
-            <span className="text-sm text-slate-600">© {new Date().getFullYear()} Daniel Risk Intelligence</span>
-          </div>
-          <nav className="flex items-center gap-6 text-sm text-slate-600">
-            <Link className="hover:text-slate-900" href="#services">Services</Link>
-            <Link className="hover:text-slate-900" href="#contact">Contact</Link>
-            <Link className="hover:text-slate-900" href="#">Privacy</Link>
-          </nav>
-        </div>
-      </footer>
-    </main>
-  )
-}
+            <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">Why clients choose us
