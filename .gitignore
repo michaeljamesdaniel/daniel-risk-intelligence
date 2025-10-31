@@ -1,6 +1,0 @@
-node_modules
-.next
-
-# runtime logs
-dev-watch.log
-next-start.log
