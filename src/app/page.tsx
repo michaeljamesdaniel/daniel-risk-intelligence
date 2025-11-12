@@ -152,8 +152,53 @@ export default function Home() {
     };
   }, []);
 
+  // JSON-LD structured data for services
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://www.danielriskintelligence.com/#geopolitical-intelligence",
+        "name": "Geopolitical Intelligence Reports",
+        "description": "Intelligence-community caliber monitoring and briefings on Central & Eastern Europe's political, economic, and security landscape.",
+        "provider": {
+          "@type": "Organization",
+          "name": "Daniel Risk Intelligence",
+          "url": "https://www.danielriskintelligence.com"
+        },
+        "areaServed": {
+          "@type": "Place",
+          "name": "Central & Eastern Europe"
+        },
+        "serviceType": "Intelligence Analysis"
+      },
+      {
+        "@type": "Service",
+        "@id": "https://www.danielriskintelligence.com/#due-diligence",
+        "name": "Due Diligence Reports",
+        "description": "Rigorous, intelligence-grade due diligence—from regulatory compliance to political risk—for transactions, partnerships, and market entry in CEE.",
+        "provider": {
+          "@type": "Organization",
+          "name": "Daniel Risk Intelligence",
+          "url": "https://www.danielriskintelligence.com"
+        },
+        "areaServed": {
+          "@type": "Place",
+          "name": "Central & Eastern Europe"
+        },
+        "serviceType": "Due Diligence"
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-white">
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      
       {/* Navigation */}
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-sm' : 'bg-transparent'}`}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -297,10 +342,7 @@ export default function Home() {
           </div>
           
           {/* Main Headline */}
-          <h1 className="hero-headline">
-            Intelligence-Grade M&A Analysis<br />
-            <span className="hero-headline-emphasis">for Central & Eastern Europe</span>
-          </h1>
+          <h1 className="hero-headline">Intelligence-Grade Analysis for Central & Eastern Europe</h1>
           
           {/* Subheadline */}
           <h2 className="hero-subheadline">
@@ -345,55 +387,123 @@ export default function Home() {
           </header>
 
           {/* Updated Service Tiles: Geopolitical Intelligence & Due Diligence */}
-          <div className="service-card geo">
-            <div className="service-header">
-              <h3 className="service-title" role="heading" aria-level={3}>Geopolitical Intelligence Reports</h3>
-              <p className="service-tagline">Forecast how policy shifts, sanctions, and regional security moves will affect your revenue, supply chain, and compliance over the next 12–24 months.</p>
-            </div>
+          <ul className="service-cards">
+            <li className="service-card geo">
+              <div className="service-header">
+                <h3 className="service-card__title service-title">Geopolitical Intelligence Reports</h3>
+                <p className="service-card__promise service-tagline">Understand which CEE policy changes will affect your operations in the next 12-24 months—with euro impacts for each risk.</p>
+              </div>
 
-            <div className="service-description">
-              <ul className="deliverables-list">
-                <li className="deliverable-item">
-                  <div className="deliverable-content">Clear probability estimates for each scenario</div>
-                </li>
-                <li className="deliverable-item">
-                  <div className="deliverable-content">Euro-level cost and revenue impacts</div>
-                </li>
-                <li className="deliverable-item">
-                  <div className="deliverable-content">Early-warning indicators you can monitor</div>
-                </li>
-              </ul>
-            </div>
+              <div className="service-description">
+                <p className="sr-only">Geopolitical intelligence brief and impacts.</p>
+              </div>
 
-            <div className="service-cta-wrapper">
-              <a className="button button--primary" href="/geopolitical-intel">See sample report</a>
-            </div>
-          </div>
+              <div className="deliverables-section">
+                <ul className="service-card__benefits deliverables-list">
+                  <li className="deliverable-item">
+                    <span className="check-icon" aria-hidden="true">
+                      <svg viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M7.707 10.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l6-6a1 1 0 10-1.414-1.414L9 11.586 7.707 10.293z" clipRule="evenodd"/></svg>
+                    </span>
+                    <div className="deliverable-content">Protect budgets from €3-5m in unexpected compliance costs</div>
+                  </li>
+                  <li className="deliverable-item">
+                    <span className="check-icon" aria-hidden="true">
+                      <svg viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M7.707 10.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l6-6a1 1 0 10-1.414-1.414L9 11.586 7.707 10.293z" clipRule="evenodd"/></svg>
+                    </span>
+                    <div className="deliverable-content">Secure suppliers before regulatory changes raise input costs 20%</div>
+                  </li>
+                  <li className="deliverable-item">
+                    <span className="check-icon" aria-hidden="true">
+                      <svg viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M7.707 10.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l6-6a1 1 0 10-1.414-1.414L9 11.586 7.707 10.293z" clipRule="evenodd"/></svg>
+                    </span>
+                    <div className="deliverable-content">Track government policy shifts affecting market access and contracts</div>
+                  </li>
+                  <li className="deliverable-item">
+                    <span className="check-icon" aria-hidden="true">
+                      <svg viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M7.707 10.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l6-6a1 1 0 10-1.414-1.414L9 11.586 7.707 10.293z" clipRule="evenodd"/></svg>
+                    </span>
+                    <div className="deliverable-content">Monitor early-warning signals with clear numeric thresholds</div>
+                  </li>
+                  <li className="deliverable-item">
+                    <span className="check-icon" aria-hidden="true">
+                      <svg viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M7.707 10.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l6-6a1 1 0 10-1.414-1.414L9 11.586 7.707 10.293z" clipRule="evenodd"/></svg>
+                    </span>
+                    <div className="deliverable-content">Compare best, base, and worst scenarios with probability ranges</div>
+                  </li>
+                  <li className="deliverable-item">
+                    <span className="check-icon" aria-hidden="true">
+                      <svg viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M7.707 10.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l6-6a1 1 0 10-1.414-1.414L9 11.586 7.707 10.293z" clipRule="evenodd"/></svg>
+                    </span>
+                    <div className="deliverable-content">10-15 pages · 2-3 week delivery</div>
+                  </li>
+                </ul>
+              </div>
 
-          <div className="service-card dd">
-            <div className="service-header">
-              <h3 className="service-title" role="heading" aria-level={3}>Due Diligence Reports</h3>
-              <p className="service-tagline">Identify political, regulatory, reputational, and operational risks before you commit capital, and receive a clear Go / Conditional Go / No-Go recommendation.</p>
-            </div>
+              
 
-            <div className="service-description">
-              <ul className="deliverables-list">
-                <li className="deliverable-item">
-                  <div className="deliverable-content">All risks quantified in euros</div>
-                </li>
-                <li className="deliverable-item">
-                  <div className="deliverable-content">Best-, base-, and worst-case deal outcomes</div>
-                </li>
-                <li className="deliverable-item">
-                  <div className="deliverable-content">Negotiation safeguards to protect value</div>
-                </li>
-              </ul>
-            </div>
+              <div className="service-cta-wrapper">
+                <a className="button button--primary" href="/geopolitical-intel">Download example report</a>
+              </div>
+            </li>
 
-            <div className="service-cta-wrapper">
-              <a className="button button--primary" href="/due-diligence">See sample report</a>
-            </div>
-          </div>
+            <li className="service-card dd">
+              <div className="service-header">
+                <h3 className="service-card__title service-title">Due Diligence Reports</h3>
+                <p className="service-card__promise service-tagline">Receive a clear Go or No-Go decision on any CEE deal—backed by euro-quantified risk analysis.</p>
+              </div>
+
+              <div className="service-description">
+                <p className="sr-only">Due diligence report summary and recommendation.</p>
+              </div>
+
+              <div className="deliverables-section">
+                <ul className="service-card__benefits deliverables-list">
+                  <li className="deliverable-item">
+                    <span className="check-icon" aria-hidden="true">
+                      <svg viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M7.707 10.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l6-6a1 1 0 10-1.414-1.414L9 11.586 7.707 10.293z" clipRule="evenodd"/></svg>
+                    </span>
+                    <div className="deliverable-content">Negotiate 15-25% lower purchase price with documented risks</div>
+                  </li>
+                  <li className="deliverable-item">
+                    <span className="check-icon" aria-hidden="true">
+                      <svg viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M7.707 10.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l6-6a1 1 0 10-1.414-1.414L9 11.586 7.707 10.293z" clipRule="evenodd"/></svg>
+                    </span>
+                    <div className="deliverable-content">Secure board approval in one meeting with clear scenarios</div>
+                  </li>
+                  <li className="deliverable-item">
+                    <span className="check-icon" aria-hidden="true">
+                      <svg viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M7.707 10.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l6-6a1 1 0 10-1.414-1.414L9 11.586 7.707 10.293z" clipRule="evenodd"/></svg>
+                    </span>
+                    <div className="deliverable-content">Analyze political, regulatory, reputation, and operational risks</div>
+                  </li>
+                  <li className="deliverable-item">
+                    <span className="check-icon" aria-hidden="true">
+                      <svg viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M7.707 10.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l6-6a1 1 0 10-1.414-1.414L9 11.586 7.707 10.293z" clipRule="evenodd"/></svg>
+                    </span>
+                    <div className="deliverable-content">Quantify every risk in euros to support price discussions</div>
+                  </li>
+                  <li className="deliverable-item">
+                    <span className="check-icon" aria-hidden="true">
+                      <svg viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M7.707 10.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l6-6a1 1 0 10-1.414-1.414L9 11.586 7.707 10.293z" clipRule="evenodd"/></svg>
+                    </span>
+                    <div className="deliverable-content">Track post-close performance with a 30-60-90 day monitoring plan</div>
+                  </li>
+                  <li className="deliverable-item">
+                    <span className="check-icon" aria-hidden="true">
+                      <svg viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M7.707 10.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l6-6a1 1 0 10-1.414-1.414L9 11.586 7.707 10.293z" clipRule="evenodd"/></svg>
+                    </span>
+                    <div className="deliverable-content">10-15 pages · 2-3 week delivery</div>
+                  </li>
+                </ul>
+              </div>
+
+              
+
+              <div className="service-cta-wrapper">
+                <a className="button button--primary" href="/due-diligence">Download example report</a>
+              </div>
+            </li>
+          </ul>
         </div>
       </section>
 
@@ -409,7 +519,7 @@ export default function Home() {
             <span className="section-eyebrow">Sector Expertise</span>
             <h2 className="section-title">Industries We Serve</h2>
             <p className="section-subtitle">
-              Deep experience across high-value M&A sectors in Central & Eastern Europe
+              Deep experience across high-value sectors in Central & Eastern Europe
             </p>
             <div className="section-divider"></div>
           </header>
@@ -521,7 +631,7 @@ export default function Home() {
           {/* Section Header */}
           <header className="section-header">
             <span className="section-eyebrow">Our Methodology</span>
-            <h2 className="section-title">Why Most M&A Advisory Gets It Wrong—And How We Get It Right</h2>
+            <h2 className="section-title">Why Most Transaction Advisory Gets It Wrong—And How We Get It Right</h2>
             <p className="section-subtitle">
               CEE executives don't need more opinions. They need defensible intelligence.
             </p>
@@ -604,7 +714,7 @@ export default function Home() {
             <p className="solution-intro">
               For 20 years, I analyzed high-stakes situations where getting it wrong had severe 
               consequences. The U.S. Intelligence Community developed systematic methods to 
-              prevent exactly these errors. We've adapted them for M&A decisions in CEE.
+              prevent exactly these errors. We've adapted them for business decisions in CEE.
             </p>
             
             <div className="solution-grid">
@@ -885,7 +995,7 @@ export default function Home() {
                       value={formData.comments}
                       onChange={(e) => setFormData({...formData, comments: e.target.value})}
                       className="mt-1"
-                      placeholder="Tell us about your M&A analysis needs..."
+                      placeholder="Tell us about your transaction analysis needs..."
                     />
                   </div>
                   
@@ -986,7 +1096,7 @@ export default function Home() {
           <div className="faq-header" style={{textAlign: 'center', marginBottom: '60px'}}>
             <h2 style={{fontSize: '36px', fontWeight: '600', color: '#0F172A', marginBottom: '16px'}}>Frequently Asked Questions</h2>
             <p style={{fontSize: '18px', color: '#64748B', maxWidth: '600px', margin: '0 auto'}}>
-              Get clear answers about our intelligence-grade M&A analysis approach
+              Get clear answers about our intelligence-grade transaction analysis approach
             </p>
           </div>
 
@@ -1022,7 +1132,7 @@ export default function Home() {
                 <span className="faq-icon" style={{fontSize: '24px', color: '#3B82F6', transition: 'transform 0.3s', transform: faqOpen[2] ? 'rotate(180deg)' : 'rotate(0deg)'}}>{faqOpen[2] ? '−' : '+'}</span>
               </div>
               <div className="faq-answer" style={{display: faqOpen[2] ? 'block' : 'none', marginTop: '16px', paddingTop: '16px', borderTop: '1px solid #E2E8F0', color: '#475569', lineHeight: '1.7'}}>
-                <p>CEE is our core expertise, but we support cross-border transactions globally. Most of our clients are Western companies entering CEE, or CEE companies expanding west. We combine deep regional knowledge with global M&A standards—giving you local insight without the "frontier market" risk premium others charge.</p>
+                <p>CEE is our core expertise, but we support cross-border transactions globally. Most of our clients are Western companies entering CEE, or CEE companies expanding west. We combine deep regional knowledge with global transaction advisory standards—giving you local insight without the "frontier market" risk premium others charge.</p>
               </div>
             </div>
 
@@ -1115,12 +1225,12 @@ export default function Home() {
 
         .hero-section {
           position: relative;
-          min-height: 100vh;
+          min-height: 70vh;
           display: flex;
           align-items: center;
           justify-content: center;
           overflow: hidden;
-          padding: 140px 20px 100px;
+          padding: 80px 18px 64px; /* tightened to match global compaction */
         }
 
         .hero-background {
@@ -1165,8 +1275,8 @@ export default function Home() {
            ═══════════════════════════════════════════════════════ */
 
         .hero-logo-wrapper {
-          margin-bottom: 48px;
-          animation: fadeInDown 0.8s ease-out;
+          margin-bottom: 32px;
+          animation: fadeInDown 0.5s cubic-bezier(0.2,0,0,1) both;
         }
 
         .hero-logo:hover {
@@ -1322,15 +1432,15 @@ export default function Home() {
            ═══════════════════════════════════════════════════════ */
 
         .hero-headline {
-          font-size: 64px;
+          font-size: 56px;
           font-weight: 800;
-          line-height: 1.1;
+          line-height: 1.08;
           color: #ffffff;
-          margin: 0 auto 32px;
-          max-width: 1000px;
-          letter-spacing: -0.03em;
-          animation: fadeInUp 0.8s ease-out 0.2s both;
-          text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+          margin: 0 auto 20px;
+          max-width: 980px;
+          letter-spacing: -0.02em;
+          animation: fadeInUp 0.42s cubic-bezier(0.2,0,0,1) 0.12s both;
+          text-shadow: 0 2px 18px rgba(0, 0, 0, 0.28);
         }
 
         .hero-headline-emphasis {
@@ -1346,13 +1456,13 @@ export default function Home() {
            ═══════════════════════════════════════════════════════ */
 
         .hero-subheadline {
-          font-size: 24px;
+          font-size: 20px;
           font-weight: 500;
-          line-height: 1.5;
+          line-height: 1.45;
           color: rgba(255, 255, 255, 0.95);
-          margin: 0 auto 24px;
-          max-width: 800px;
-          animation: fadeInUp 0.8s ease-out 0.3s both;
+          margin: 0 auto 18px;
+          max-width: 780px;
+          animation: fadeInUp 0.46s cubic-bezier(0.2,0,0,1) 0.18s both;
         }
 
         /* ═══════════════════════════════════════════════════════
@@ -1360,12 +1470,12 @@ export default function Home() {
            ═══════════════════════════════════════════════════════ */
 
         .hero-body {
-          font-size: 18px;
-          line-height: 1.8;
+          font-size: 16px;
+          line-height: 1.7;
           color: rgba(255, 255, 255, 0.85);
-          margin: 0 auto 64px;
-          max-width: 720px;
-          animation: fadeInUp 0.8s ease-out 0.4s both;
+          margin: 0 auto 40px;
+          max-width: 700px;
+          animation: fadeInUp 0.5s cubic-bezier(0.2,0,0,1) 0.24s both;
         }
 
         /* ═══════════════════════════════════════════════════════
@@ -1478,7 +1588,7 @@ export default function Home() {
            ═══════════════════════════════════════════════════════ */
 
         .services-section {
-          padding: 140px 20px 120px;
+          padding: 80px 18px 64px; /* tightened */
           background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
         }
 
@@ -1530,22 +1640,24 @@ export default function Home() {
         /* Service Cards */
         .service-card {
           background: #ffffff;
-          padding: 56px;
-          margin-bottom: 48px;
-          border-radius: 20px;
-          box-shadow: 0 4px 24px rgba(15, 23, 42, 0.08),
-                      0 2px 8px rgba(15, 23, 42, 0.04);
-          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          padding: 20px; /* aggressive tightening */
+          margin-bottom: 20px;
+          border-radius: 10px;
+          box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06),
+                      0 2px 6px rgba(15, 23, 42, 0.03);
+          transition: transform 0.22s cubic-bezier(0.2, 0, 0.08, 1), box-shadow 0.22s ease;
           position: relative;
-          border: 1px solid #e2e8f0;
+          border: 1px solid #e8edf6;
+          display: flex; /* ensure consistent vertical layout */
+          flex-direction: column;
         }
 
         .service-card::before {
           content: attr(data-service);
           position: absolute;
-          top: 24px;
-          right: 24px;
-          font-size: 120px;
+          top: 18px;
+          right: 18px;
+          font-size: 80px;
           font-weight: 900;
           color: #f1f5f9;
           line-height: 1;
@@ -1561,7 +1673,10 @@ export default function Home() {
 
         /* Service Header */
         .service-header {
-          margin-bottom: 32px;
+          margin-bottom: 24px;
+          /* lock header to a consistent height so the deliverables section
+             on each card starts at the same vertical offset */
+          min-height: 120px;
         }
 
         .service-number {
@@ -1631,10 +1746,13 @@ export default function Home() {
         /* Deliverables Section */
         .deliverables-section {
           background: linear-gradient(135deg, #eff6ff 0%, #f8fafc 100%);
-          padding: 40px;
-          border-radius: 16px;
-          margin-bottom: 40px;
-          border: 1px solid #e0e7ff;
+          padding: 12px; /* tightened */
+          border-radius: 10px;
+          margin-bottom: 16px;
+          border: 1px solid #e6eefc;
+          min-height: 200px; /* ensure vertical alignment across cards */
+          display: flex;
+          flex-direction: column;
         }
 
         .deliverables-heading {
@@ -1660,17 +1778,18 @@ export default function Home() {
           margin: 0;
           display: flex;
           flex-direction: column;
-          gap: 20px;
+          gap: 10px; /* tighter, consistent with globals.css */
+          flex: 1 1 auto;
         }
 
         .deliverable-item {
           display: flex;
           align-items: flex-start;
-          gap: 16px;
-          padding: 20px;
+          gap: 12px;
+          padding: 8px 6px;
           background: #ffffff;
-          border-radius: 12px;
-          transition: all 0.3s ease;
+          border-radius: 8px;
+          transition: all 0.22s ease;
           border: 1px solid transparent;
         }
 
@@ -1682,9 +1801,12 @@ export default function Home() {
 
         .check-icon {
           flex-shrink: 0;
-          width: 24px;
-          height: 24px;
+          width: 20px; /* align with globals.css sizing */
+          height: 20px;
           color: #10b981;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
         }
 
         .check-icon svg {
@@ -1708,6 +1830,7 @@ export default function Home() {
         /* Service CTA */
         .service-cta-wrapper {
           text-align: center;
+          margin-top: auto; /* push CTA to the bottom so card heights match visually */
         }
 
         .service-cta {
@@ -1947,7 +2070,7 @@ export default function Home() {
            ═══════════════════════════════════════════════════════ */
 
         .methodology-section {
-          padding: 120px 20px;
+          padding: 80px 18px; /* tightened */
           background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
         }
 
@@ -1988,7 +2111,7 @@ export default function Home() {
         @media (max-width: 768px) {
           .hero-section {
             min-height: auto;
-            padding: 100px 20px 80px;
+            padding: 80px 18px 60px;
           }
           
           .hero-headline {
@@ -2015,7 +2138,7 @@ export default function Home() {
           }
 
           .services-section {
-            padding: 100px 20px 80px;
+            padding: 64px 18px 48px;
           }
           
           .section-title {
@@ -2027,14 +2150,14 @@ export default function Home() {
           }
           
           .service-card {
-            padding: 32px 24px;
-            margin-bottom: 32px;
+            padding: 24px 18px;
+            margin-bottom: 24px;
           }
           
           .service-card::before {
-            font-size: 80px;
-            top: 16px;
-            right: 16px;
+            font-size: 72px;
+            top: 14px;
+            right: 14px;
           }
           
           .service-title {
@@ -2042,11 +2165,11 @@ export default function Home() {
           }
           
           .deliverables-section {
-            padding: 28px 20px;
+            padding: 16px 12px;
           }
           
           .deliverable-item {
-            padding: 16px;
+            padding: 8px;
           }
           
           .service-cta {
@@ -2055,7 +2178,7 @@ export default function Home() {
           }
 
           .industries-section {
-            padding: 100px 20px 80px;
+            padding: 64px 18px 48px;
           }
           
           .industries-grid {
@@ -2083,11 +2206,11 @@ export default function Home() {
           }
 
           .methodology-section {
-            padding: 100px 20px 80px;
+            padding: 64px 18px 48px;
           }
 
           .contact-section {
-            padding: 50px 20px 80px;
+            padding: 40px 16px 64px;
           }
         }
 
@@ -2132,12 +2255,12 @@ export default function Home() {
            ═══════════════════════════════════════════════════════════════ */
 
         .methodology-problem {
-          margin-bottom: 80px;
-          padding: 60px;
+          margin-bottom: 48px;
+          padding: 32px; /* tightened */
           background: #ffffff;
-          border-radius: 20px;
+          border-radius: 12px;
           border-left: 6px solid #ef4444;
-          box-shadow: 0 4px 24px rgba(239, 68, 68, 0.08);
+          box-shadow: 0 4px 18px rgba(239, 68, 68, 0.07);
         }
 
         .problem-heading {
@@ -2159,7 +2282,7 @@ export default function Home() {
         .problem-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 24px;
+          gap: 18px;
         }
 
         .problem-card {
