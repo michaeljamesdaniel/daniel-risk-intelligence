@@ -41,7 +41,7 @@ export default function Home() {
   }, []);
 
   // Intersection Observer for animations
-  const useIntersectionObserver = (ref: useRef<HTMLElement>, options: IntersectionObserverInit) => {
+  const useIntersectionObserver = (ref: React.RefObject<HTMLElement | null>, options: IntersectionObserverInit) => {
     const [isIntersecting, setIsIntersecting] = useState(false);
 
     useEffect(() => {
@@ -337,304 +337,63 @@ export default function Home() {
           {/* Section Header */}
           <header className="section-header">
             <span className="section-eyebrow">What We Deliver</span>
-            <h2 className="section-title">Our Advisory Services</h2>
+            <h2 className="section-title">Intelligence-Grade Advisory Reports</h2>
             <p className="section-subtitle">
-              Three specialized services covering acquisitions, expansion, and integration
+              Two focused reports combining intelligence-community rigor with clear business language
             </p>
             <div className="section-divider"></div>
           </header>
-          
-          {/* Service 1: Due Diligence */}
-          <div className="service-card" data-service="01">
-            
-            {/* Service Header */}
+
+          {/* Updated Service Tiles: Geopolitical Intelligence & Due Diligence */}
+          <div className="service-card geo">
             <div className="service-header">
-              <span className="service-number">01</span>
-              <h3 className="service-title">Due Diligence Reports</h3>
-              <p className="service-tagline">Before You Acquire a Company</p>
+              <h3 className="service-title" role="heading" aria-level={3}>Geopolitical Intelligence Reports</h3>
+              <p className="service-tagline">Forecast how policy shifts, sanctions, and regional security moves will affect your revenue, supply chain, and compliance over the next 12–24 months.</p>
             </div>
-            
-            {/* Service Description */}
+
             <div className="service-description">
-              <p>
-                Should you buy this company? What risks could hurt the deal? How should you 
-                protect yourself in the purchase agreement? Our due diligence reports answer 
-                these questions with thorough research on the target's market position, 
-                competitive threats, operational risks, and regulatory issues.
-              </p>
-            </div>
-            
-            {/* Target Audience */}
-            <div className="service-for">
-              <strong className="for-label">For:</strong>
-              <span className="for-text">
-                Private equity funds, corporate investors, M&A advisors in Poland, Czech Republic, 
-                Hungary, Romania, and across CEE
-              </span>
-            </div>
-            
-            {/* Deliverables Section */}
-            <div className="deliverables-section">
-              <h4 className="deliverables-heading">
-                <svg className="heading-icon" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z" clipRule="evenodd"/>
-                </svg>
-                What You Receive
-              </h4>
-              
               <ul className="deliverables-list">
                 <li className="deliverable-item">
-                  <span className="check-icon">
-                    <svg viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                    </svg>
-                  </span>
-                  <div className="deliverable-content">
-                    <strong>Executive Summary:</strong> Go/Conditional/No-Go recommendation 
-                    with main risks explained in first page
-                  </div>
+                  <div className="deliverable-content">Clear probability estimates for each scenario</div>
                 </li>
-                
                 <li className="deliverable-item">
-                  <span className="check-icon">
-                    <svg viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                    </svg>
-                  </span>
-                  <div className="deliverable-content">
-                    <strong>Full Analysis:</strong> Detailed examination of market position, 
-                    competitors, customers, suppliers, regulatory environment, operational capabilities
-                  </div>
+                  <div className="deliverable-content">Euro-level cost and revenue impacts</div>
                 </li>
-                
                 <li className="deliverable-item">
-                  <span className="check-icon">
-                    <svg viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                    </svg>
-                  </span>
-                  <div className="deliverable-content">
-                    <strong>Deal Protection Recommendations:</strong> Specific suggestions for 
-                    escrow amounts, warranty clauses, payment terms based on risks found
-                  </div>
-                </li>
-                
-                <li className="deliverable-item">
-                  <span className="check-icon">
-                    <svg viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                    </svg>
-                  </span>
-                  <div className="deliverable-content">
-                    <strong>Risk Rating:</strong> Each risk categorized by impact on People, 
-                    Reputation, Control, or business Continuity (PRCC framework)
-                  </div>
+                  <div className="deliverable-content">Early-warning indicators you can monitor</div>
                 </li>
               </ul>
             </div>
-            
-            {/* CTA Button */}
+
             <div className="service-cta-wrapper">
-              <a href="#contact" className="service-cta">
-                <span>Request Due Diligence Discussion</span>
-                <svg className="cta-arrow" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"/>
-                </svg>
-              </a>
+              <a className="button button--primary" href="/geopolitical-intel">See sample report</a>
             </div>
-            
           </div>
 
-          {/* Service 2: Market Entry */}
-          <div className="service-card" data-service="02">
-            
+          <div className="service-card dd">
             <div className="service-header">
-              <span className="service-number">02</span>
-              <h3 className="service-title">Market Entry & Digital Transformation Strategy</h3>
-              <p className="service-tagline">Before You Enter a New Market or Invest in Technology</p>
+              <h3 className="service-title" role="heading" aria-level={3}>Due Diligence Reports</h3>
+              <p className="service-tagline">Identify political, regulatory, reputational, and operational risks before you commit capital, and receive a clear Go / Conditional Go / No-Go recommendation.</p>
             </div>
-            
-            <div className="service-description">
-              <p>
-                Should you expand into this market? What will it take to succeed? Which technology 
-                investments make sense? We assess opportunities, competitive dynamics, and technology 
-                options using structured research and scenario testing.
-              </p>
-            </div>
-            
-            <div className="service-for">
-              <strong className="for-label">For:</strong>
-              <span className="for-text">
-                Western European companies considering CEE expansion, CEE firms evaluating regional 
-                growth, executives deciding which digital transformation projects to fund
-              </span>
-            </div>
-            
-            <div className="deliverables-section">
-              <h4 className="deliverables-heading">
-                <svg className="heading-icon" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z" clipRule="evenodd"/>
-                </svg>
-                What You Receive
-              </h4>
-              
-              <ul className="deliverables-list">
-                <li className="deliverable-item">
-                  <span className="check-icon">
-                    <svg viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                    </svg>
-                  </span>
-                  <div className="deliverable-content">
-                    <strong>Entry Recommendation:</strong> Enter now/wait 12-18 months/avoid—with 
-                    confidence level stated clearly
-                  </div>
-                </li>
-                
-                <li className="deliverable-item">
-                  <span className="check-icon">
-                    <svg viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                    </svg>
-                  </span>
-                  <div className="deliverable-content">
-                    <strong>Market Analysis:</strong> Market size, growth trends, customer needs, 
-                    competitor strengths/weaknesses, regulatory requirements
-                  </div>
-                </li>
-                
-                <li className="deliverable-item">
-                  <span className="check-icon">
-                    <svg viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                    </svg>
-                  </span>
-                  <div className="deliverable-content">
-                    <strong>Go-To-Market Strategy:</strong> Recommended approach (organic, acquisition, 
-                    partnership), investment requirements, timeline to profitability
-                  </div>
-                </li>
-                
-                <li className="deliverable-item">
-                  <span className="check-icon">
-                    <svg viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                    </svg>
-                  </span>
-                  <div className="deliverable-content">
-                    <strong>Monitoring Plan:</strong> Specific indicators to watch that signal when 
-                    assumptions need updating
-                  </div>
-                </li>
-              </ul>
-            </div>
-            
-            <div className="service-cta-wrapper">
-              <a href="#contact" className="service-cta">
-                <span>Request Market Entry Discussion</span>
-                <svg className="cta-arrow" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"/>
-                </svg>
-              </a>
-            </div>
-            
-          </div>
 
-          {/* Service 3: Integration */}
-          <div className="service-card" data-service="03">
-            
-            <div className="service-header">
-              <span className="service-number">03</span>
-              <h3 className="service-title">Post-Acquisition Integration Plans</h3>
-              <p className="service-tagline">After You Close the Deal</p>
-            </div>
-            
             <div className="service-description">
-              <p>
-                How do you successfully merge two companies? What should happen in the first 100 days? 
-                Which cost savings are realistic? We develop practical integration plans addressing 
-                culture, systems consolidation, quick wins, and realistic synergy targets.
-              </p>
-            </div>
-            
-            <div className="service-for">
-              <strong className="for-label">For:</strong>
-              <span className="for-text">
-                Private equity funds integrating acquisitions, corporate buyers merging CEE targets, 
-                family businesses professionalizing through M&A
-              </span>
-            </div>
-            
-            <div className="deliverables-section">
-              <h4 className="deliverables-heading">
-                <svg className="heading-icon" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z" clipRule="evenodd"/>
-                </svg>
-                What You Receive
-              </h4>
-              
               <ul className="deliverables-list">
                 <li className="deliverable-item">
-                  <span className="check-icon">
-                    <svg viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                    </svg>
-                  </span>
-                  <div className="deliverable-content">
-                    <strong>100-Day Plan:</strong> Priority actions for months 1-3 with clear owners 
-                    and deadlines
-                  </div>
+                  <div className="deliverable-content">All risks quantified in euros</div>
                 </li>
-                
                 <li className="deliverable-item">
-                  <span className="check-icon">
-                    <svg viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                    </svg>
-                  </span>
-                  <div className="deliverable-content">
-                    <strong>Cultural Integration Assessment:</strong> Key differences between 
-                    organizations and how to bridge them
-                  </div>
+                  <div className="deliverable-content">Best-, base-, and worst-case deal outcomes</div>
                 </li>
-                
                 <li className="deliverable-item">
-                  <span className="check-icon">
-                    <svg viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                    </svg>
-                  </span>
-                  <div className="deliverable-content">
-                    <strong>Systems Integration Roadmap:</strong> How and when to consolidate IT, 
-                    finance, HR, operations systems
-                  </div>
-                </li>
-                
-                <li className="deliverable-item">
-                  <span className="check-icon">
-                    <svg viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                    </svg>
-                  </span>
-                  <div className="deliverable-content">
-                    <strong>Synergy Plan:</strong> Which cost savings and revenue opportunities are 
-                    achievable, with confidence ratings for each
-                  </div>
+                  <div className="deliverable-content">Negotiation safeguards to protect value</div>
                 </li>
               </ul>
             </div>
-            
+
             <div className="service-cta-wrapper">
-              <a href="#contact" className="service-cta">
-                <span>Request Integration Discussion</span>
-                <svg className="cta-arrow" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"/>
-                </svg>
-              </a>
+              <a className="button button--primary" href="/due-diligence">See sample report</a>
             </div>
-            
           </div>
-          
         </div>
       </section>
 
