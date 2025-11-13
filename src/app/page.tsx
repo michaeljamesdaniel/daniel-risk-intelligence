@@ -396,8 +396,8 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           
           {/* Section Header */}
-          <div className="text-center mb-20">
-            <div className="inline-flex items-center justify-center px-5 py-2.5 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-full mb-6 border border-blue-100/50">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center justify-center px-4 py-2 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-full mb-4 border border-blue-100/50">
               <svg className="w-4 h-4 text-[#1e3a5f] mr-2" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
                 <path fillRule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd"/>
@@ -413,22 +413,22 @@ export default function Home() {
           </div>
 
           {/* Service Cards - Side by Side Layout */}
-          <div className="grid lg:grid-cols-2 gap-8 mb-12 items-start">
+          <div className="grid lg:grid-cols-2 gap-6 mb-12 items-stretch">
             
             {/* Card 1: Geopolitical Intelligence */}
             <div className="group bg-white rounded-xl border-2 border-[#2c5282] hover:border-[#1e3a5f] transition-all duration-300 overflow-hidden shadow-lg hover:shadow-2xl flex flex-col h-full">
               
               {/* Card Title - Prominent */}
-              <div className="bg-gradient-to-r from-[#2c5282] to-[#1e3a5f] p-6 border-b-4 border-[#0a1929]">
-                <div className="flex items-center gap-3 mb-2">
+              <div className="bg-gradient-to-r from-[#2c5282] to-[#1e3a5f] p-5 border-b-4 border-[#0a1929]">
+                <div className="flex items-center gap-3 mb-1.5">
                   <div className="flex-shrink-0 w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow-md">
                     <svg className="w-6 h-6 text-[#1e3a5f]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-bold text-white">Geopolitical Intelligence Report</h3>
+                  <h3 className="text-xl font-bold text-white leading-tight">Geopolitical Intelligence Report</h3>
                 </div>
-                <p className="text-blue-50 text-base leading-relaxed">
+                <p className="text-blue-50 text-sm leading-snug mt-2">
                   Stay ahead of policy shifts that could impact your CEE operations—with euro-quantified risk assessments for the next 12-24 months
                 </p>
               </div>
@@ -443,13 +443,13 @@ export default function Home() {
                   Key Deliverables
                 </h4>
                 <div className="space-y-3 mb-6 flex-grow">
-                  <div className="flex items-start gap-3 p-3 bg-white border border-[#d0dbe8] rounded-lg hover:border-[#2c5282] hover:shadow-md transition-all">
+                  <div className="flex items-start gap-2.5 p-2.5 bg-white border border-[#d0dbe8] rounded-lg hover:border-[#2c5282] hover:shadow-md transition-all">
                     <div className="flex-shrink-0 w-5 h-5 bg-[#1e3a5f] rounded-full flex items-center justify-center mt-0.5">
                       <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
                       </svg>
                     </div>
-                    <span className="text-gray-800 text-sm leading-relaxed">Protect budgets from €3-5M in unexpected compliance costs</span>
+                    <span className="text-gray-800 text-sm leading-snug">Protect budgets from €3-5M in unexpected compliance costs</span>
                   </div>
                   <div className="flex items-start gap-3 p-3 bg-white border border-[#d0dbe8] rounded-lg hover:border-[#2c5282] hover:shadow-md transition-all">
                     <div className="flex-shrink-0 w-5 h-5 bg-[#1e3a5f] rounded-full flex items-center justify-center mt-0.5">
@@ -459,34 +459,34 @@ export default function Home() {
                     </div>
                     <span className="text-gray-800 text-sm leading-relaxed">Secure suppliers before regulatory changes raise input costs 20%</span>
                   </div>
-                  <div className="flex items-start gap-3 p-3 bg-white border border-[#d0dbe8] rounded-lg hover:border-[#2c5282] hover:shadow-md transition-all">
+                  <div className="flex items-start gap-2.5 p-2.5 bg-white border border-[#d0dbe8] rounded-lg hover:border-[#2c5282] hover:shadow-md transition-all">
                     <div className="flex-shrink-0 w-5 h-5 bg-[#1e3a5f] rounded-full flex items-center justify-center mt-0.5">
                       <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
                       </svg>
                     </div>
-                    <span className="text-gray-800 text-sm leading-relaxed">Track government policy shifts affecting market access</span>
+                    <span className="text-gray-800 text-sm leading-snug">Track government policy shifts affecting market access</span>
                   </div>
-                  <div className="flex items-start gap-3 p-3 bg-white border border-[#d0dbe8] rounded-lg hover:border-[#2c5282] hover:shadow-md transition-all">
+                  <div className="flex items-start gap-2.5 p-2.5 bg-white border border-[#d0dbe8] rounded-lg hover:border-[#2c5282] hover:shadow-md transition-all">
                     <div className="flex-shrink-0 w-5 h-5 bg-[#1e3a5f] rounded-full flex items-center justify-center mt-0.5">
                       <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
                       </svg>
                     </div>
-                    <span className="text-gray-800 text-sm leading-relaxed">Monitor early-warning signals with numeric thresholds</span>
+                    <span className="text-gray-800 text-sm leading-snug">Monitor early-warning signals with numeric thresholds</span>
                   </div>
-                  <div className="flex items-start gap-3 p-3 bg-white border border-[#d0dbe8] rounded-lg hover:border-[#2c5282] hover:shadow-md transition-all">
+                  <div className="flex items-start gap-2.5 p-2.5 bg-white border border-[#d0dbe8] rounded-lg hover:border-[#2c5282] hover:shadow-md transition-all">
                     <div className="flex-shrink-0 w-5 h-5 bg-[#1e3a5f] rounded-full flex items-center justify-center mt-0.5">
                       <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
                       </svg>
                     </div>
-                    <span className="text-gray-800 text-sm leading-relaxed">Best, base, and worst scenarios with probability ranges</span>
+                    <span className="text-gray-800 text-sm leading-snug">Best, base, and worst scenarios with probability ranges</span>
                   </div>
                 </div>
 
                 {/* Report Details */}
-                <div className="flex items-center justify-between mb-5 p-4 bg-[#e6eef7] border border-[#2c5282] rounded-lg">
+                <div className="flex items-center justify-between mb-4 p-3 bg-[#e6eef7] border border-[#2c5282] rounded-lg">
                   <div className="flex items-center gap-2 text-[#0a1929]">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
@@ -515,16 +515,16 @@ export default function Home() {
             <div className="group bg-white rounded-xl border-2 border-[#2c5282] hover:border-[#1e3a5f] transition-all duration-300 overflow-hidden shadow-lg hover:shadow-2xl flex flex-col h-full">
               
               {/* Card Title - Prominent */}
-              <div className="bg-gradient-to-r from-[#2c5282] to-[#1e3a5f] p-6 border-b-4 border-[#0a1929]">
-                <div className="flex items-center gap-3 mb-2">
+              <div className="bg-gradient-to-r from-[#2c5282] to-[#1e3a5f] p-5 border-b-4 border-[#0a1929]">
+                <div className="flex items-center gap-3 mb-1.5">
                   <div className="flex-shrink-0 w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow-md">
                     <svg className="w-6 h-6 text-[#1e3a5f]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-bold text-white">Strategic Pre-Due Diligence Assessment</h3>
+                  <h3 className="text-xl font-bold text-white leading-tight">Strategic Pre-Due Diligence Assessment</h3>
                 </div>
-                <p className="text-blue-50 text-base leading-relaxed">
+                <p className="text-blue-50 text-sm leading-snug mt-2">
                   Get a clear go or no-go decision before you spend EUR 150-300K on full due diligence—backed by euro-quantified risks and defensible intelligence.
                 </p>
               </div>
