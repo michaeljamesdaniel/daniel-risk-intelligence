@@ -522,10 +522,10 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-bold text-white">Due Diligence Report</h3>
+                  <h3 className="text-2xl font-bold text-white">Strategic Pre-Due Diligence Assessment</h3>
                 </div>
                 <p className="text-blue-50 text-base leading-relaxed">
-                  Get a clear Go or No-Go decision on any CEE deal—backed by euro-quantified risk analysis and defensible intelligence
+                  Get a clear go or no-go decision before you spend EUR 150-300K on full due diligence—backed by euro-quantified risks and defensible intelligence.
                 </p>
               </div>
 
@@ -545,7 +545,7 @@ export default function Home() {
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
                       </svg>
                     </div>
-                    <span className="text-gray-800 text-sm leading-relaxed">Negotiate 15-25% lower purchase price with documented risks</span>
+                    <span className="text-gray-800 text-sm leading-relaxed">What compliance actually costs (in euros, with timelines)</span>
                   </div>
                   <div className="flex items-start gap-3 p-3 bg-white border border-[#d0dbe8] rounded-lg hover:border-[#2c5282] hover:shadow-md transition-all">
                     <div className="flex-shrink-0 w-5 h-5 bg-[#1e3a5f] rounded-full flex items-center justify-center mt-0.5">
@@ -553,7 +553,7 @@ export default function Home() {
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
                       </svg>
                     </div>
-                    <span className="text-gray-800 text-sm leading-relaxed">Secure board approval in one meeting with clear scenarios</span>
+                    <span className="text-gray-800 text-sm leading-relaxed">What's blocking you from entering a market (customers, competitors, labor, regulations)</span>
                   </div>
                   <div className="flex items-start gap-3 p-3 bg-white border border-[#d0dbe8] rounded-lg hover:border-[#2c5282] hover:shadow-md transition-all">
                     <div className="flex-shrink-0 w-5 h-5 bg-[#1e3a5f] rounded-full flex items-center justify-center mt-0.5">
@@ -561,7 +561,7 @@ export default function Home() {
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
                       </svg>
                     </div>
-                    <span className="text-gray-800 text-sm leading-relaxed">Analyze political, regulatory, reputation, and operational risks</span>
+                    <span className="text-gray-800 text-sm leading-relaxed">How to structure the deal to protect yourself (escrow, milestones, earnout)</span>
                   </div>
                   <div className="flex items-start gap-3 p-3 bg-white border border-[#d0dbe8] rounded-lg hover:border-[#2c5282] hover:shadow-md transition-all">
                     <div className="flex-shrink-0 w-5 h-5 bg-[#1e3a5f] rounded-full flex items-center justify-center mt-0.5">
@@ -569,7 +569,7 @@ export default function Home() {
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
                       </svg>
                     </div>
-                    <span className="text-gray-800 text-sm leading-relaxed">Quantify every risk in euros to support price discussions</span>
+                    <span className="text-gray-800 text-sm leading-relaxed">When to walk away (three specific kill-switch triggers)</span>
                   </div>
                   <div className="flex items-start gap-3 p-3 bg-white border border-[#d0dbe8] rounded-lg hover:border-[#2c5282] hover:shadow-md transition-all">
                     <div className="flex-shrink-0 w-5 h-5 bg-[#1e3a5f] rounded-full flex items-center justify-center mt-0.5">
@@ -577,7 +577,7 @@ export default function Home() {
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
                       </svg>
                     </div>
-                    <span className="text-gray-800 text-sm leading-relaxed">30-60-90 day post-close monitoring plan included</span>
+                    <span className="text-gray-800 text-sm leading-relaxed">What Phase 2 due diligence will cost and prove (scope, budget, timeline)</span>
                   </div>
                 </div>
 
@@ -587,13 +587,13 @@ export default function Home() {
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                     </svg>
-                    <span className="font-bold text-sm">10-15 pages</span>
+                    <span className="font-bold text-sm">8-15 pages</span>
                   </div>
                   <div className="flex items-center gap-2 text-[#0a1929]">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
                     </svg>
-                    <span className="font-bold text-sm">2-3 weeks</span>
+                    <span className="font-bold text-sm">2-4 weeks</span>
                   </div>
                 </div>
 
