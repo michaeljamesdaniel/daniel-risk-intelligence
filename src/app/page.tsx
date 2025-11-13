@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -192,7 +192,10 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen relative">
+      {/* Dynamic Background Layer */}
+      <div className="fixed inset-0 -z-10 bg-gradient-to-br from-gray-50 via-blue-50/30 to-gray-50"></div>
+      
       {/* JSON-LD Structured Data */}
       <script
         type="application/ld+json"
@@ -200,7 +203,7 @@ export default function Home() {
       />
       
       {/* Navigation */}
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-sm' : 'bg-transparent'}`}>
+      <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ease-in-out ${isScrolled ? 'bg-white/98 backdrop-blur-lg shadow-md border-b border-gray-200' : 'bg-transparent'}`}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex justify-center items-center h-20 relative">
             <div className="absolute left-6">
@@ -223,31 +226,40 @@ export default function Home() {
             <div className="hidden md:flex space-x-8">
               <button 
                 onClick={() => scrollToSection('services')} 
-                className={`${isScrolled ? 'text-gray-600 hover:text-gray-900' : 'text-white hover:text-gray-200'} font-medium transition-colors`}
+                className={`${isScrolled ? 'text-gray-700 hover:text-gray-900' : 'text-white/90 hover:text-white'} font-medium transition-all duration-300 relative group pb-1`}
+                aria-label="Navigate to Services section"
               >
                 Services
+                <span className={`absolute bottom-0 left-0 w-0 h-0.5 ${isScrolled ? 'bg-gray-900' : 'bg-white'} transition-all duration-300 group-hover:w-full`}></span>
               </button>
               <button 
                 onClick={() => scrollToSection('methodology')} 
-                className={`${isScrolled ? 'text-gray-600 hover:text-gray-900' : 'text-white hover:text-gray-200'} font-medium transition-colors`}
+                className={`${isScrolled ? 'text-gray-700 hover:text-gray-900' : 'text-white/90 hover:text-white'} font-medium transition-all duration-300 relative group pb-1`}
+                aria-label="Navigate to Methodology section"
               >
                 Methodology
+                <span className={`absolute bottom-0 left-0 w-0 h-0.5 ${isScrolled ? 'bg-gray-900' : 'bg-white'} transition-all duration-300 group-hover:w-full`}></span>
               </button>
               <button 
                 onClick={() => scrollToSection('about')} 
-                className={`${isScrolled ? 'text-gray-600 hover:text-gray-900' : 'text-white hover:text-gray-200'} font-medium transition-colors`}
+                className={`${isScrolled ? 'text-gray-700 hover:text-gray-900' : 'text-white/90 hover:text-white'} font-medium transition-all duration-300 relative group pb-1`}
+                aria-label="Navigate to About section"
               >
                 About
+                <span className={`absolute bottom-0 left-0 w-0 h-0.5 ${isScrolled ? 'bg-gray-900' : 'bg-white'} transition-all duration-300 group-hover:w-full`}></span>
               </button>
               <button 
                 onClick={() => scrollToSection('faq')} 
-                className={`${isScrolled ? 'text-gray-600 hover:text-gray-900' : 'text-white hover:text-gray-200'} font-medium transition-colors`}
+                className={`${isScrolled ? 'text-gray-700 hover:text-gray-900' : 'text-white/90 hover:text-white'} font-medium transition-all duration-300 relative group pb-1`}
+                aria-label="Navigate to FAQ section"
               >
                 FAQ
+                <span className={`absolute bottom-0 left-0 w-0 h-0.5 ${isScrolled ? 'bg-gray-900' : 'bg-white'} transition-all duration-300 group-hover:w-full`}></span>
               </button>
               <button 
                 onClick={() => scrollToSection('contact')} 
-                className={`${isScrolled ? 'text-gray-600 hover:text-gray-900' : 'text-white hover:text-gray-200'} font-medium transition-colors`}
+                className={`${isScrolled ? 'bg-blue-600 text-white hover:bg-blue-700' : 'bg-white/10 text-white hover:bg-white/20 border border-white/20'} font-medium transition-all duration-300 px-5 py-2 rounded-lg backdrop-blur-sm`}
+                aria-label="Navigate to Contact section"
               >
                 Contact
               </button>
@@ -258,6 +270,8 @@ export default function Home() {
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className={`${isScrolled ? 'text-gray-600 hover:text-gray-900' : 'text-white hover:text-gray-200'} p-2`}
+                aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+                aria-expanded={isMobileMenuOpen}
               >
                 <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   {isMobileMenuOpen ? (
@@ -372,138 +386,243 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section id="services" className="services-section" ref={servicesRef}>
-        <div className="services-container">
+      {/* Services Section - REDESIGNED WITH CLEAR TITLES */}
+      <section id="services" className="py-32 relative overflow-hidden" ref={servicesRef}>
+        {/* Animated gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-gray-50/30 to-white -z-10"></div>
+        {/* Subtle background pattern */}
+        <div className="absolute inset-0 opacity-[0.015]" style={{backgroundImage: 'radial-gradient(circle at 2px 2px, rgb(148 163 184) 1px, transparent 0)', backgroundSize: '48px 48px'}}></div>
+        
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
           
           {/* Section Header */}
-          <header className="section-header">
-            <span className="section-eyebrow">What We Deliver</span>
-            <h2 className="section-title">Intelligence-Grade Advisory Reports</h2>
-            <p className="section-subtitle">
-              Two focused reports combining intelligence-community rigor with clear business language
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center justify-center px-5 py-2.5 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-full mb-6 border border-blue-100/50">
+              <svg className="w-4 h-4 text-[#1e3a5f] mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+                <path fillRule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd"/>
+              </svg>
+              <span className="text-sm font-semibold text-[#1e3a5f] uppercase tracking-wide">What We Deliver</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 leading-tight">
+              Intelligence-Grade Advisory Reports
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              Two specialized reports combining intelligence-community rigor with actionable business insights for high-stakes CEE transactions
             </p>
-            <div className="section-divider"></div>
-          </header>
+          </div>
 
-          {/* Updated Service Tiles: Geopolitical Intelligence & Due Diligence */}
-          <ul className="service-cards">
-            <li className="service-card geo">
-              <div className="service-header">
-                <h3 className="service-card__title service-title">Geopolitical Intelligence Reports</h3>
-                <p className="service-card__promise service-tagline">Understand which CEE policy changes will affect your operations in the next 12-24 months—with euro impacts for each risk.</p>
-              </div>
-
-              <div className="service-description">
-                <p className="sr-only">Geopolitical intelligence brief and impacts.</p>
-              </div>
-
-              <div className="deliverables-section">
-                <ul className="service-card__benefits deliverables-list">
-                  <li className="deliverable-item">
-                    <span className="check-icon" aria-hidden="true">
-                      <svg viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M7.707 10.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l6-6a1 1 0 10-1.414-1.414L9 11.586 7.707 10.293z" clipRule="evenodd"/></svg>
-                    </span>
-                    <div className="deliverable-content">Protect budgets from €3-5m in unexpected compliance costs</div>
-                  </li>
-                  <li className="deliverable-item">
-                    <span className="check-icon" aria-hidden="true">
-                      <svg viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M7.707 10.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l6-6a1 1 0 10-1.414-1.414L9 11.586 7.707 10.293z" clipRule="evenodd"/></svg>
-                    </span>
-                    <div className="deliverable-content">Secure suppliers before regulatory changes raise input costs 20%</div>
-                  </li>
-                  <li className="deliverable-item">
-                    <span className="check-icon" aria-hidden="true">
-                      <svg viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M7.707 10.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l6-6a1 1 0 10-1.414-1.414L9 11.586 7.707 10.293z" clipRule="evenodd"/></svg>
-                    </span>
-                    <div className="deliverable-content">Track government policy shifts affecting market access and contracts</div>
-                  </li>
-                  <li className="deliverable-item">
-                    <span className="check-icon" aria-hidden="true">
-                      <svg viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M7.707 10.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l6-6a1 1 0 10-1.414-1.414L9 11.586 7.707 10.293z" clipRule="evenodd"/></svg>
-                    </span>
-                    <div className="deliverable-content">Monitor early-warning signals with clear numeric thresholds</div>
-                  </li>
-                  <li className="deliverable-item">
-                    <span className="check-icon" aria-hidden="true">
-                      <svg viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M7.707 10.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l6-6a1 1 0 10-1.414-1.414L9 11.586 7.707 10.293z" clipRule="evenodd"/></svg>
-                    </span>
-                    <div className="deliverable-content">Compare best, base, and worst scenarios with probability ranges</div>
-                  </li>
-                  <li className="deliverable-item">
-                    <span className="check-icon" aria-hidden="true">
-                      <svg viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M7.707 10.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l6-6a1 1 0 10-1.414-1.414L9 11.586 7.707 10.293z" clipRule="evenodd"/></svg>
-                    </span>
-                    <div className="deliverable-content">10-15 pages · 2-3 week delivery</div>
-                  </li>
-                </ul>
-              </div>
-
+          {/* Service Cards - Side by Side Layout */}
+          <div className="grid lg:grid-cols-2 gap-8 mb-12 items-start">
+            
+            {/* Card 1: Geopolitical Intelligence */}
+            <div className="group bg-white rounded-xl border-2 border-[#2c5282] hover:border-[#1e3a5f] transition-all duration-300 overflow-hidden shadow-lg hover:shadow-2xl flex flex-col h-full">
               
-
-              <div className="service-cta-wrapper">
-                <a className="button button--primary" href="/geopolitical-intel">Download example report</a>
-              </div>
-            </li>
-
-            <li className="service-card dd">
-              <div className="service-header">
-                <h3 className="service-card__title service-title">Due Diligence Reports</h3>
-                <p className="service-card__promise service-tagline">Receive a clear Go or No-Go decision on any CEE deal—backed by euro-quantified risk analysis.</p>
-              </div>
-
-              <div className="service-description">
-                <p className="sr-only">Due diligence report summary and recommendation.</p>
-              </div>
-
-              <div className="deliverables-section">
-                <ul className="service-card__benefits deliverables-list">
-                  <li className="deliverable-item">
-                    <span className="check-icon" aria-hidden="true">
-                      <svg viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M7.707 10.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l6-6a1 1 0 10-1.414-1.414L9 11.586 7.707 10.293z" clipRule="evenodd"/></svg>
-                    </span>
-                    <div className="deliverable-content">Negotiate 15-25% lower purchase price with documented risks</div>
-                  </li>
-                  <li className="deliverable-item">
-                    <span className="check-icon" aria-hidden="true">
-                      <svg viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M7.707 10.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l6-6a1 1 0 10-1.414-1.414L9 11.586 7.707 10.293z" clipRule="evenodd"/></svg>
-                    </span>
-                    <div className="deliverable-content">Secure board approval in one meeting with clear scenarios</div>
-                  </li>
-                  <li className="deliverable-item">
-                    <span className="check-icon" aria-hidden="true">
-                      <svg viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M7.707 10.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l6-6a1 1 0 10-1.414-1.414L9 11.586 7.707 10.293z" clipRule="evenodd"/></svg>
-                    </span>
-                    <div className="deliverable-content">Analyze political, regulatory, reputation, and operational risks</div>
-                  </li>
-                  <li className="deliverable-item">
-                    <span className="check-icon" aria-hidden="true">
-                      <svg viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M7.707 10.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l6-6a1 1 0 10-1.414-1.414L9 11.586 7.707 10.293z" clipRule="evenodd"/></svg>
-                    </span>
-                    <div className="deliverable-content">Quantify every risk in euros to support price discussions</div>
-                  </li>
-                  <li className="deliverable-item">
-                    <span className="check-icon" aria-hidden="true">
-                      <svg viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M7.707 10.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l6-6a1 1 0 10-1.414-1.414L9 11.586 7.707 10.293z" clipRule="evenodd"/></svg>
-                    </span>
-                    <div className="deliverable-content">Track post-close performance with a 30-60-90 day monitoring plan</div>
-                  </li>
-                  <li className="deliverable-item">
-                    <span className="check-icon" aria-hidden="true">
-                      <svg viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M7.707 10.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l6-6a1 1 0 10-1.414-1.414L9 11.586 7.707 10.293z" clipRule="evenodd"/></svg>
-                    </span>
-                    <div className="deliverable-content">10-15 pages · 2-3 week delivery</div>
-                  </li>
-                </ul>
+              {/* Card Title - Prominent */}
+              <div className="bg-gradient-to-r from-[#2c5282] to-[#1e3a5f] p-6 border-b-4 border-[#0a1929]">
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="flex-shrink-0 w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow-md">
+                    <svg className="w-6 h-6 text-[#1e3a5f]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-white">Geopolitical Intelligence Report</h3>
+                </div>
+                <p className="text-blue-50 text-base leading-relaxed">
+                  Stay ahead of policy shifts that could impact your CEE operations—with euro-quantified risk assessments for the next 12-24 months
+                </p>
               </div>
 
+              {/* Card Body */}
+              <div className="p-8 flex-grow flex flex-col bg-gradient-to-b from-white to-[#e6eef7]/30">
+                <h4 className="text-sm font-bold text-[#0a1929] uppercase tracking-wider mb-4 flex items-center gap-2">
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+                    <path fillRule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd"/>
+                  </svg>
+                  Key Deliverables
+                </h4>
+                <div className="space-y-3 mb-6 flex-grow">
+                  <div className="flex items-start gap-3 p-3 bg-white border border-[#d0dbe8] rounded-lg hover:border-[#2c5282] hover:shadow-md transition-all">
+                    <div className="flex-shrink-0 w-5 h-5 bg-[#1e3a5f] rounded-full flex items-center justify-center mt-0.5">
+                      <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                      </svg>
+                    </div>
+                    <span className="text-gray-800 text-sm leading-relaxed">Protect budgets from €3-5M in unexpected compliance costs</span>
+                  </div>
+                  <div className="flex items-start gap-3 p-3 bg-white border border-[#d0dbe8] rounded-lg hover:border-[#2c5282] hover:shadow-md transition-all">
+                    <div className="flex-shrink-0 w-5 h-5 bg-[#1e3a5f] rounded-full flex items-center justify-center mt-0.5">
+                      <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                      </svg>
+                    </div>
+                    <span className="text-gray-800 text-sm leading-relaxed">Secure suppliers before regulatory changes raise input costs 20%</span>
+                  </div>
+                  <div className="flex items-start gap-3 p-3 bg-white border border-[#d0dbe8] rounded-lg hover:border-[#2c5282] hover:shadow-md transition-all">
+                    <div className="flex-shrink-0 w-5 h-5 bg-[#1e3a5f] rounded-full flex items-center justify-center mt-0.5">
+                      <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                      </svg>
+                    </div>
+                    <span className="text-gray-800 text-sm leading-relaxed">Track government policy shifts affecting market access</span>
+                  </div>
+                  <div className="flex items-start gap-3 p-3 bg-white border border-[#d0dbe8] rounded-lg hover:border-[#2c5282] hover:shadow-md transition-all">
+                    <div className="flex-shrink-0 w-5 h-5 bg-[#1e3a5f] rounded-full flex items-center justify-center mt-0.5">
+                      <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                      </svg>
+                    </div>
+                    <span className="text-gray-800 text-sm leading-relaxed">Monitor early-warning signals with numeric thresholds</span>
+                  </div>
+                  <div className="flex items-start gap-3 p-3 bg-white border border-[#d0dbe8] rounded-lg hover:border-[#2c5282] hover:shadow-md transition-all">
+                    <div className="flex-shrink-0 w-5 h-5 bg-[#1e3a5f] rounded-full flex items-center justify-center mt-0.5">
+                      <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                      </svg>
+                    </div>
+                    <span className="text-gray-800 text-sm leading-relaxed">Best, base, and worst scenarios with probability ranges</span>
+                  </div>
+                </div>
+
+                {/* Report Details */}
+                <div className="flex items-center justify-between mb-5 p-4 bg-[#e6eef7] border border-[#2c5282] rounded-lg">
+                  <div className="flex items-center gap-2 text-[#0a1929]">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                    </svg>
+                    <span className="font-bold text-sm">10-15 pages</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-[#0a1929]">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span className="font-bold text-sm">2-3 weeks</span>
+                  </div>
+                </div>
+
+                {/* CTA Button */}
+                <a href="/geopolitical-intel" className="block w-full text-center bg-gradient-to-r from-[#2c5282] to-[#1e3a5f] hover:from-[#1e3a5f] hover:to-[#0a1929] text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-xl transform hover:-translate-y-0.5 flex-shrink-0">
+                  <span className="text-white">Download Example Report</span>
+                  <svg className="inline-block w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            {/* Card 2: Due Diligence */}
+            <div className="group bg-white rounded-xl border-2 border-[#2c5282] hover:border-[#1e3a5f] transition-all duration-300 overflow-hidden shadow-lg hover:shadow-2xl flex flex-col h-full">
               
-
-              <div className="service-cta-wrapper">
-                <a className="button button--primary" href="/due-diligence">Download example report</a>
+              {/* Card Title - Prominent */}
+              <div className="bg-gradient-to-r from-[#2c5282] to-[#1e3a5f] p-6 border-b-4 border-[#0a1929]">
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="flex-shrink-0 w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow-md">
+                    <svg className="w-6 h-6 text-[#1e3a5f]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-white">Due Diligence Report</h3>
+                </div>
+                <p className="text-blue-50 text-base leading-relaxed">
+                  Get a clear Go or No-Go decision on any CEE deal—backed by euro-quantified risk analysis and defensible intelligence
+                </p>
               </div>
-            </li>
-          </ul>
+
+              {/* Card Body */}
+              <div className="p-8 flex-grow flex flex-col bg-gradient-to-b from-white to-[#e6eef7]/30">
+                <h4 className="text-sm font-bold text-[#0a1929] uppercase tracking-wider mb-4 flex items-center gap-2">
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+                    <path fillRule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd"/>
+                  </svg>
+                  Key Deliverables
+                </h4>
+                <div className="space-y-3 mb-6 flex-grow">
+                  <div className="flex items-start gap-3 p-3 bg-white border border-[#d0dbe8] rounded-lg hover:border-[#2c5282] hover:shadow-md transition-all">
+                    <div className="flex-shrink-0 w-5 h-5 bg-[#1e3a5f] rounded-full flex items-center justify-center mt-0.5">
+                      <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                      </svg>
+                    </div>
+                    <span className="text-gray-800 text-sm leading-relaxed">Negotiate 15-25% lower purchase price with documented risks</span>
+                  </div>
+                  <div className="flex items-start gap-3 p-3 bg-white border border-[#d0dbe8] rounded-lg hover:border-[#2c5282] hover:shadow-md transition-all">
+                    <div className="flex-shrink-0 w-5 h-5 bg-[#1e3a5f] rounded-full flex items-center justify-center mt-0.5">
+                      <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                      </svg>
+                    </div>
+                    <span className="text-gray-800 text-sm leading-relaxed">Secure board approval in one meeting with clear scenarios</span>
+                  </div>
+                  <div className="flex items-start gap-3 p-3 bg-white border border-[#d0dbe8] rounded-lg hover:border-[#2c5282] hover:shadow-md transition-all">
+                    <div className="flex-shrink-0 w-5 h-5 bg-[#1e3a5f] rounded-full flex items-center justify-center mt-0.5">
+                      <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                      </svg>
+                    </div>
+                    <span className="text-gray-800 text-sm leading-relaxed">Analyze political, regulatory, reputation, and operational risks</span>
+                  </div>
+                  <div className="flex items-start gap-3 p-3 bg-white border border-[#d0dbe8] rounded-lg hover:border-[#2c5282] hover:shadow-md transition-all">
+                    <div className="flex-shrink-0 w-5 h-5 bg-[#1e3a5f] rounded-full flex items-center justify-center mt-0.5">
+                      <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                      </svg>
+                    </div>
+                    <span className="text-gray-800 text-sm leading-relaxed">Quantify every risk in euros to support price discussions</span>
+                  </div>
+                  <div className="flex items-start gap-3 p-3 bg-white border border-[#d0dbe8] rounded-lg hover:border-[#2c5282] hover:shadow-md transition-all">
+                    <div className="flex-shrink-0 w-5 h-5 bg-[#1e3a5f] rounded-full flex items-center justify-center mt-0.5">
+                      <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                      </svg>
+                    </div>
+                    <span className="text-gray-800 text-sm leading-relaxed">30-60-90 day post-close monitoring plan included</span>
+                  </div>
+                </div>
+
+                {/* Report Details */}
+                <div className="flex items-center justify-between mb-5 p-4 bg-[#e6eef7] border border-[#2c5282] rounded-lg">
+                  <div className="flex items-center gap-2 text-[#0a1929]">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                    </svg>
+                    <span className="font-bold text-sm">10-15 pages</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-[#0a1929]">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span className="font-bold text-sm">2-3 weeks</span>
+                  </div>
+                </div>
+
+                {/* CTA Button */}
+                <a href="/due-diligence" className="block w-full text-center bg-gradient-to-r from-[#2c5282] to-[#1e3a5f] hover:from-[#1e3a5f] hover:to-[#0a1929] text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-xl transform hover:-translate-y-0.5 flex-shrink-0">
+                  <span className="text-white">Download Example Report</span>
+                  <svg className="inline-block w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            
+          </div>
+
+          {/* Bottom Call-to-Action Banner */}
+          <div className="bg-gradient-to-r from-[#1e3a5f] to-[#0a1929] rounded-xl p-8 text-center shadow-xl border-2 border-[#2c5282]">
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">Not Sure Which Report You Need?</h3>
+            <p className="text-blue-50 text-base md:text-lg mb-6 max-w-2xl mx-auto">
+              Schedule a 30-minute consultation to discuss your specific situation and we'll recommend the right approach
+            </p>
+            <a href="#contact" className="inline-flex items-center gap-2 bg-white text-[#1e3a5f] font-bold px-6 py-3 rounded-lg hover:bg-blue-50 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+              Schedule Free Consultation
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+              </svg>
+            </a>
+          </div>
+
         </div>
       </section>
 
@@ -511,7 +630,9 @@ export default function Home() {
            INDUSTRIES SECTION
            ═══════════════════════════════════════════════════════════════ */}
 
-      <section id="industries" className="industries-section">
+      <section id="industries" className="industries-section relative">
+        {/* Dynamic background for industries */}
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-50/30 via-white to-gray-50/30 -z-10"></div>
         <div className="industries-container">
           
           {/* Section Header */}
@@ -530,7 +651,7 @@ export default function Home() {
             {/* Industry 1: Technology & Software */}
             <div className="industry-card">
               <div className="industry-icon-wrapper">
-                <svg className="industry-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <svg className="industry-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                   <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
                   <line x1="8" y1="21" x2="16" y2="21"></line>
                   <line x1="12" y1="17" x2="12" y2="21"></line>
@@ -545,7 +666,7 @@ export default function Home() {
             {/* Industry 2: Manufacturing & Industrial */}
             <div className="industry-card">
               <div className="industry-icon-wrapper">
-                <svg className="industry-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <svg className="industry-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                   <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                   <polyline points="9 22 9 12 15 12 15 22"></polyline>
                 </svg>
@@ -559,7 +680,7 @@ export default function Home() {
             {/* Industry 3: Consumer & Retail */}
             <div className="industry-card">
               <div className="industry-icon-wrapper">
-                <svg className="industry-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <svg className="industry-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                   <circle cx="9" cy="21" r="1"></circle>
                   <circle cx="20" cy="21" r="1"></circle>
                   <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
@@ -574,7 +695,7 @@ export default function Home() {
             {/* Industry 4: Healthcare & Life Sciences */}
             <div className="industry-card">
               <div className="industry-icon-wrapper">
-                <svg className="industry-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <svg className="industry-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                   <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
                 </svg>
               </div>
@@ -587,7 +708,7 @@ export default function Home() {
             {/* Industry 5: Energy & Infrastructure */}
             <div className="industry-card">
               <div className="industry-icon-wrapper">
-                <svg className="industry-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <svg className="industry-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                   <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
                 </svg>
               </div>
@@ -600,7 +721,7 @@ export default function Home() {
             {/* Industry 6: Business Services & BPO */}
             <div className="industry-card">
               <div className="industry-icon-wrapper">
-                <svg className="industry-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <svg className="industry-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                   <line x1="12" y1="1" x2="12" y2="23"></line>
                   <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
                 </svg>
@@ -625,7 +746,9 @@ export default function Home() {
       </section>
 
       {/* Methodology Section */}
-      <section id="methodology" className="methodology-section">
+      <section id="methodology" className="methodology-section relative">
+        {/* Rich gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-slate-50/20 to-white -z-10"></div>
         <div className="methodology-container">
           
           {/* Section Header */}
@@ -720,14 +843,16 @@ export default function Home() {
             <div className="solution-grid">
               {/* Solution Card 1: Rated Sources */}
               <div className="solution-card">
-                <div className="solution-badge">01</div>
-                <h4 className="solution-card-heading">Every Source Gets a Reliability Rating</h4>
-                <p className="solution-description">
-                  Before we use any piece of information, we classify it: <strong>Primary</strong> 
-                  (direct access to facts), <strong>Credible</strong> (reputable but secondhand), 
-                  or <strong>Requires Verification</strong> (needs corroboration). You see exactly 
-                  how solid each conclusion is.
-                </p>
+                <div className="solution-card-content">
+                  <div className="solution-badge">01</div>
+                  <h4 className="solution-card-heading">Every Source Gets a Reliability Rating</h4>
+                  <p className="solution-description">
+                    Before we use any piece of information, we classify it: <strong>Primary</strong> 
+                    (direct access to facts), <strong>Credible</strong> (reputable but secondhand), 
+                    or <strong>Requires Verification</strong> (needs corroboration). You see exactly 
+                    how solid each conclusion is.
+                  </p>
+                </div>
                 <div className="solution-result">
                   <strong>What this prevents:</strong> Treating a competitor's marketing claim as 
                   if it were audited financial data.
@@ -736,13 +861,15 @@ export default function Home() {
 
               {/* Solution Card 2: Scenario Testing */}
               <div className="solution-card">
-                <div className="solution-badge">02</div>
-                <h4 className="solution-card-heading">We Test Multiple Scenarios Before Recommending</h4>
-                <p className="solution-description">
-                  Instead of forming one hypothesis and defending it, we actively test 3-5 competing 
-                  explanations. We only recommend one after systematically ruling out the alternatives. 
-                  This forces us to confront disconfirming evidence instead of ignoring it.
-                </p>
+                <div className="solution-card-content">
+                  <div className="solution-badge">02</div>
+                  <h4 className="solution-card-heading">We Test Multiple Scenarios Before Recommending</h4>
+                  <p className="solution-description">
+                    Instead of forming one hypothesis and defending it, we actively test 3-5 competing 
+                    explanations. We only recommend one after systematically ruling out the alternatives. 
+                    This forces us to confront disconfirming evidence instead of ignoring it.
+                  </p>
+                </div>
                 <div className="solution-result">
                   <strong>What this prevents:</strong> Missing the scenario where your target's growth 
                   came from an unsustainable government contract, not genuine market demand.
@@ -751,13 +878,15 @@ export default function Home() {
 
               {/* Solution Card 3: Calibrated Confidence */}
               <div className="solution-card">
-                <div className="solution-badge">03</div>
-                <h4 className="solution-card-heading">Confidence Levels Are Explicit and Calibrated</h4>
-                <p className="solution-description">
-                  When we say "Highly Likely," we mean 80-95% probability. "Likely" means 65-75%. 
-                  These aren't feelings—they're calibrated estimates tied to how much contradictory 
-                  evidence exists and how many scenarios we've ruled out.
-                </p>
+                <div className="solution-card-content">
+                  <div className="solution-badge">03</div>
+                  <h4 className="solution-card-heading">Confidence Levels Are Explicit and Calibrated</h4>
+                  <p className="solution-description">
+                    When we say "Highly Likely," we mean 80-95% probability. "Likely" means 65-75%. 
+                    These aren't feelings—they're calibrated estimates tied to how much contradictory 
+                    evidence exists and how many scenarios we've ruled out.
+                  </p>
+                </div>
                 <div className="solution-result">
                   <strong>What this gives you:</strong> The ability to adjust your deal structure 
                   and price based on actual risk, not consultant overconfidence.
@@ -766,14 +895,16 @@ export default function Home() {
 
               {/* Solution Card 4: 16 Quality Gates */}
               <div className="solution-card">
-                <div className="solution-badge">04</div>
-                <h4 className="solution-card-heading">16 Mandatory Quality Gates Before Delivery</h4>
-                <p className="solution-description">
-                  Every report passes through 16 specific checks. Did we verify the target's top 
-                  3 customers independently? Did we test our market size estimate against two different 
-                  methodologies? Did we identify the one assumption that, if wrong, invalidates our 
-                  recommendation? Non-negotiable, regardless of deadline pressure.
-                </p>
+                <div className="solution-card-content">
+                  <div className="solution-badge">04</div>
+                  <h4 className="solution-card-heading">16 Mandatory Quality Gates Before Delivery</h4>
+                  <p className="solution-description">
+                    Every report passes through 16 specific checks. Did we verify the target's top 
+                    3 customers independently? Did we test our market size estimate against two different 
+                    methodologies? Did we identify the one assumption that, if wrong, invalidates our 
+                    recommendation? Non-negotiable, regardless of deadline pressure.
+                  </p>
+                </div>
                 <div className="solution-result">
                   <strong>What this prevents:</strong> Delivering a report that looks polished but 
                   rests on a single unchecked assumption.
@@ -782,13 +913,15 @@ export default function Home() {
 
               {/* Solution Card 5: Red Team Challenge */}
               <div className="solution-card">
-                <div className="solution-badge">05</div>
-                <h4 className="solution-card-heading">Red Team Challenge: We Try to Prove Ourselves Wrong</h4>
-                <p className="solution-description">
-                  Before finalizing any recommendation, we deliberately adopt the opposite position 
-                  and try to build the strongest case against our own conclusion. If that case is weak, 
-                  we're confident. If it's strong, we revise our assessment or lower our confidence.
-                </p>
+                <div className="solution-card-content">
+                  <div className="solution-badge">05</div>
+                  <h4 className="solution-card-heading">Red Team Challenge: We Try to Prove Ourselves Wrong</h4>
+                  <p className="solution-description">
+                    Before finalizing any recommendation, we deliberately adopt the opposite position 
+                    and try to build the strongest case against our own conclusion. If that case is weak, 
+                    we're confident. If it's strong, we revise our assessment or lower our confidence.
+                  </p>
+                </div>
                 <div className="solution-result">
                   <strong>What this prevents:</strong> The consultant who's so invested in their 
                   recommendation that they can't see the warning signs you're about to ignore.
@@ -797,13 +930,15 @@ export default function Home() {
 
               {/* Solution Card 6: Source Traceability */}
               <div className="solution-card">
-                <div className="solution-badge">06</div>
-                <h4 className="solution-card-heading">Full Source Traceability in Every Report</h4>
-                <p className="solution-description">
-                  Every claim in our reports links back to a specific source with its reliability 
-                  rating. You can trace any conclusion to the underlying evidence. If your board 
-                  challenges an assumption, you know exactly where it came from and how solid it is.
-                </p>
+                <div className="solution-card-content">
+                  <div className="solution-badge">06</div>
+                  <h4 className="solution-card-heading">Full Source Traceability in Every Report</h4>
+                  <p className="solution-description">
+                    Every claim in our reports links back to a specific source with its reliability 
+                    rating. You can trace any conclusion to the underlying evidence. If your board 
+                    challenges an assumption, you know exactly where it came from and how solid it is.
+                  </p>
+                </div>
                 <div className="solution-result">
                   <strong>What this gives you:</strong> The ability to defend your decision with 
                   confidence when stakeholders question the basis for a €20M acquisition.
@@ -835,16 +970,18 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-white" ref={aboutRef}>
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
+      <section id="about" className="py-24 relative overflow-hidden" ref={aboutRef}>
+        {/* Layered gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-50/40 via-white to-gray-50/40 -z-10"></div>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">About Daniel Risk Intelligence</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Founded by former U.S. intelligence officer
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-2 gap-8">
             <div className="flex flex-col justify-start">
               <h3 className="founder-name" style={{textAlign: 'left', marginTop: '32px', marginBottom: '24px'}}>Intelligence-Grade Analysis</h3>
               <p className="text-lg text-gray-700 mb-6">
@@ -906,7 +1043,9 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="contact-section">
+      <section id="contact" className="contact-section relative">
+        {/* Elegant gradient for contact */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-blue-50/20 to-white -z-10"></div>
         <div className="contact-container">
           
           {/* Section Header */}
@@ -919,14 +1058,14 @@ export default function Home() {
             <div className="section-divider"></div>
           </header>
           
-          <div className="grid lg:grid-cols-2 gap-12">
-            <Card>
-              <CardHeader>
+          <div className="grid lg:grid-cols-2 gap-8 items-start">
+            <Card className="flex flex-col gap-2 py-0">
+              <CardHeader className="pt-5 pb-3">
                 <CardTitle className="text-2xl">Send us a message</CardTitle>
               </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
+              <form onSubmit={handleSubmit} className="flex flex-col">
+                <CardContent className="px-6 pt-0 pb-0 space-y-4">
+                  <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <Label htmlFor="name">Name *</Label>
                       <Input
@@ -934,7 +1073,8 @@ export default function Home() {
                         value={formData.name}
                         onChange={(e) => setFormData({...formData, name: e.target.value})}
                         required
-                        className="mt-1"
+                        className="mt-1 border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
+                        placeholder="Your name"
                       />
                     </div>
                     <div>
@@ -943,12 +1083,13 @@ export default function Home() {
                         id="company"
                         value={formData.company}
                         onChange={(e) => setFormData({...formData, company: e.target.value})}
-                        className="mt-1"
+                        className="mt-1 border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
+                        placeholder="Company name"
                       />
                     </div>
                   </div>
-                  
-                  <div className="grid md:grid-cols-2 gap-6">
+
+                  <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <Label htmlFor="email">Email *</Label>
                       <Input
@@ -957,7 +1098,8 @@ export default function Home() {
                         value={formData.email}
                         onChange={(e) => setFormData({...formData, email: e.target.value})}
                         required
-                        className="mt-1"
+                        className="mt-1 border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
+                        placeholder="your.email@company.com"
                       />
                     </div>
                     <div>
@@ -967,11 +1109,12 @@ export default function Home() {
                         type="tel"
                         value={formData.phone}
                         onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                        className="mt-1"
+                        className="mt-1 border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
+                        placeholder="+1 (555) 123-4567"
                       />
                     </div>
                   </div>
-                  
+
                   <div>
                     <Label htmlFor="service">Service Interest</Label>
                     <Select value={formData.service} onValueChange={(value) => setFormData({...formData, service: value})}>
@@ -986,7 +1129,7 @@ export default function Home() {
                       </SelectContent>
                     </Select>
                   </div>
-                  
+
                   <div>
                     <Label htmlFor="comments">Message</Label>
                     <Textarea
@@ -994,28 +1137,28 @@ export default function Home() {
                       rows={4}
                       value={formData.comments}
                       onChange={(e) => setFormData({...formData, comments: e.target.value})}
-                      className="mt-1"
+                      className="mt-1 border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all resize-none"
                       placeholder="Tell us about your transaction analysis needs..."
                     />
                   </div>
-                  
-                  <Button 
-                    type="submit" 
+                </CardContent>
+                <CardFooter className="px-6 pt-3 pb-4">
+                  <Button
+                    type="submit"
                     className="w-full bg-blue-600 hover:bg-blue-700 text-white"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? 'Sending...' : 'Send Message'}
                   </Button>
-                </form>
-              </CardContent>
+                </CardFooter>
+              </form>
             </Card>
             
-            <div className="space-y-8">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-2xl">Contact Information</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-6">
+            <Card className="flex flex-col gap-2 py-0">
+              <CardHeader className="pt-5 pb-3">
+                <CardTitle className="text-2xl">Contact Information</CardTitle>
+              </CardHeader>
+              <CardContent className="px-6 pt-0 pb-4 space-y-4">
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-2">Connect</h4>
                     <a 
@@ -1059,38 +1202,36 @@ export default function Home() {
                   </div>
                 </CardContent>
               </Card>
-              
-              <Card>
-                <CardContent className="pt-6">
-                  <h4 className="font-semibold text-gray-900 mb-4">Consultation Process</h4>
-                  <ol className="space-y-3">
-                    <li className="flex">
-                      <span className="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3 flex-shrink-0">1</span>
-                      <span className="text-gray-700">Initial discovery call to understand your needs</span>
-                    </li>
-                    <li className="flex">
-                      <span className="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3 flex-shrink-0">2</span>
-                      <span className="text-gray-700">Custom proposal with scope and timeline</span>
-                    </li>
-                    <li className="flex">
-                      <span className="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3 flex-shrink-0">3</span>
-                      <span className="text-gray-700">Kick-off and project execution</span>
-                    </li>
-                    <li className="flex">
-                      <span className="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3 flex-shrink-0">4</span>
-                      <span className="text-gray-700">Delivery of intelligence-grade analysis</span>
-                    </li>
-                  </ol>
-                </CardContent>
-              </Card>
-            </div>
+          </div>
+          <div className="mt-6 rounded-2xl border border-blue-100 bg-white/85 p-6 shadow-md shadow-blue-100/40 backdrop-blur">
+            <h3 className="mb-3 text-lg font-semibold text-blue-900">Our Consultation Process</h3>
+            <ol className="space-y-3 text-gray-700 lg:flex lg:items-start lg:gap-4 lg:space-y-0">
+              <li className="flex items-start gap-3 rounded-xl border border-blue-50 bg-white/90 px-4 py-3 shadow-sm lg:flex-1">
+                <span className="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm flex-shrink-0">1</span>
+                <span>Initial discovery call to understand your needs</span>
+              </li>
+              <li className="flex items-start gap-3 rounded-xl border border-blue-50 bg-white/90 px-4 py-3 shadow-sm lg:flex-1">
+                <span className="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm flex-shrink-0">2</span>
+                <span>Custom proposal with scope and timeline</span>
+              </li>
+              <li className="flex items-start gap-3 rounded-xl border border-blue-50 bg-white/90 px-4 py-3 shadow-sm lg:flex-1">
+                <span className="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm flex-shrink-0">3</span>
+                <span>Kick-off and project execution</span>
+              </li>
+              <li className="flex items-start gap-3 rounded-xl border border-blue-50 bg-white/90 px-4 py-3 shadow-sm lg:flex-1">
+                <span className="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm flex-shrink-0">4</span>
+                <span>Delivery of intelligence-grade analysis</span>
+              </li>
+            </ol>
           </div>
         </div>
       </section>
 
       {/* FAQ Section - Updated */}
-      <section id="faq" className="faq-section" style={{padding: '80px 20px', backgroundColor: '#f8fafc'}} ref={faqRef}>
-        <div className="container" style={{maxWidth: '900px', margin: '0 auto'}}>
+      <section id="faq" className="faq-section relative overflow-hidden" style={{padding: '96px 20px'}} ref={faqRef}>
+        {/* Multi-layer gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-50/50 via-white to-gray-50/50 -z-10"></div>
+        <div className="container relative z-10" style={{maxWidth: '900px', margin: '0 auto'}}>
           
           {/* Section Header */}
           <div className="faq-header" style={{textAlign: 'center', marginBottom: '60px'}}>
@@ -1104,67 +1245,103 @@ export default function Home() {
           <div className="faq-container">
             
             {/* Question 1 */}
-            <div className="faq-item" style={{background: 'white', borderRadius: '8px', padding: '24px', marginBottom: '16px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)', cursor: 'pointer'}} onClick={() => toggleFAQ(0)}>
-              <div className="faq-question" style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+            <div className="faq-item" style={{background: 'white', borderRadius: '8px', padding: '24px', marginBottom: '16px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)'}}>
+              <button 
+                className="faq-question" 
+                style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%', border: 'none', background: 'transparent', cursor: 'pointer', textAlign: 'left'}}
+                onClick={() => toggleFAQ(0)}
+                aria-expanded={faqOpen[0]}
+                aria-controls="faq-answer-1"
+              >
                 <h3 style={{fontSize: '20px', fontWeight: '600', color: '#0F172A', margin: '0'}}>What makes your due diligence different from traditional consulting firms?</h3>
-                <span className="faq-icon" style={{fontSize: '24px', color: '#3B82F6', transition: 'transform 0.3s', transform: faqOpen[0] ? 'rotate(180deg)' : 'rotate(0deg)'}}>{faqOpen[0] ? '−' : '+'}</span>
-              </div>
-              <div className="faq-answer" style={{display: faqOpen[0] ? 'block' : 'none', marginTop: '16px', paddingTop: '16px', borderTop: '1px solid #E2E8F0', color: '#475569', lineHeight: '1.7'}}>
+                <span className="faq-icon" style={{fontSize: '24px', color: '#3B82F6', transition: 'transform 0.3s', transform: faqOpen[0] ? 'rotate(180deg)' : 'rotate(0deg)'}} aria-hidden="true">{faqOpen[0] ? '−' : '+'}</span>
+              </button>
+              <div id="faq-answer-1" className="faq-answer" style={{display: faqOpen[0] ? 'block' : 'none', marginTop: '16px', paddingTop: '16px', borderTop: '1px solid #E2E8F0', color: '#475569', lineHeight: '1.7'}}>
                 <p>We apply U.S. Intelligence Community analytical standards to commercial due diligence. This means structured evidence collection, systematic bias testing, and confidence-weighted findings—not just consultant opinions. Our reports tell you not just what we found, but how confident you should be in each conclusion and what alternative scenarios exist.</p>
               </div>
             </div>
 
             {/* Question 2 */}
-            <div className="faq-item" style={{background: 'white', borderRadius: '8px', padding: '24px', marginBottom: '16px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)', cursor: 'pointer'}} onClick={() => toggleFAQ(1)}>
-              <div className="faq-question" style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+            <div className="faq-item" style={{background: 'white', borderRadius: '8px', padding: '24px', marginBottom: '16px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)'}}>
+              <button 
+                className="faq-question" 
+                style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%', border: 'none', background: 'transparent', cursor: 'pointer', textAlign: 'left'}}
+                onClick={() => toggleFAQ(1)}
+                aria-expanded={faqOpen[1]}
+                aria-controls="faq-answer-2"
+              >
                 <h3 style={{fontSize: '20px', fontWeight: '600', color: '#0F172A', margin: '0'}}>How long does a typical engagement take?</h3>
-                <span className="faq-icon" style={{fontSize: '24px', color: '#3B82F6', transition: 'transform 0.3s', transform: faqOpen[1] ? 'rotate(180deg)' : 'rotate(0deg)'}}>{faqOpen[1] ? '−' : '+'}</span>
-              </div>
-              <div className="faq-answer" style={{display: faqOpen[1] ? 'block' : 'none', marginTop: '16px', paddingTop: '16px', borderTop: '1px solid #E2E8F0', color: '#475569', lineHeight: '1.7'}}>
+                <span className="faq-icon" style={{fontSize: '24px', color: '#3B82F6', transition: 'transform 0.3s', transform: faqOpen[1] ? 'rotate(180deg)' : 'rotate(0deg)'}} aria-hidden="true">{faqOpen[1] ? '−' : '+'}</span>
+              </button>
+              <div id="faq-answer-2" className="faq-answer" style={{display: faqOpen[1] ? 'block' : 'none', marginTop: '16px', paddingTop: '16px', borderTop: '1px solid #E2E8F0', color: '#475569', lineHeight: '1.7'}}>
                 <p>Due diligence projects typically run 2-4 weeks from kickoff to final report delivery. Market entry studies range from 3-6 weeks depending on the number of markets analyzed. Integration support is structured in 30-day sprints. We prioritize speed without compromising analytical rigor—most clients need answers before deal windows close.</p>
               </div>
             </div>
 
             {/* Question 3 */}
-            <div className="faq-item" style={{background: 'white', borderRadius: '8px', padding: '24px', marginBottom: '16px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)', cursor: 'pointer'}} onClick={() => toggleFAQ(2)}>
-              <div className="faq-question" style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+            <div className="faq-item" style={{background: 'white', borderRadius: '8px', padding: '24px', marginBottom: '16px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)'}}>
+              <button 
+                className="faq-question" 
+                style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%', border: 'none', background: 'transparent', cursor: 'pointer', textAlign: 'left'}}
+                onClick={() => toggleFAQ(2)}
+                aria-expanded={faqOpen[2]}
+                aria-controls="faq-answer-3"
+              >
                 <h3 style={{fontSize: '20px', fontWeight: '600', color: '#0F172A', margin: '0'}}>Do you focus only on Central & Eastern Europe?</h3>
-                <span className="faq-icon" style={{fontSize: '24px', color: '#3B82F6', transition: 'transform 0.3s', transform: faqOpen[2] ? 'rotate(180deg)' : 'rotate(0deg)'}}>{faqOpen[2] ? '−' : '+'}</span>
-              </div>
-              <div className="faq-answer" style={{display: faqOpen[2] ? 'block' : 'none', marginTop: '16px', paddingTop: '16px', borderTop: '1px solid #E2E8F0', color: '#475569', lineHeight: '1.7'}}>
+                <span className="faq-icon" style={{fontSize: '24px', color: '#3B82F6', transition: 'transform 0.3s', transform: faqOpen[2] ? 'rotate(180deg)' : 'rotate(0deg)'}} aria-hidden="true">{faqOpen[2] ? '−' : '+'}</span>
+              </button>
+              <div id="faq-answer-3" className="faq-answer" style={{display: faqOpen[2] ? 'block' : 'none', marginTop: '16px', paddingTop: '16px', borderTop: '1px solid #E2E8F0', color: '#475569', lineHeight: '1.7'}}>
                 <p>CEE is our core expertise, but we support cross-border transactions globally. Most of our clients are Western companies entering CEE, or CEE companies expanding west. We combine deep regional knowledge with global transaction advisory standards—giving you local insight without the "frontier market" risk premium others charge.</p>
               </div>
             </div>
 
             {/* Question 4 */}
-            <div className="faq-item" style={{background: 'white', borderRadius: '8px', padding: '24px', marginBottom: '16px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)', cursor: 'pointer'}} onClick={() => toggleFAQ(3)}>
-              <div className="faq-question" style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+            <div className="faq-item" style={{background: 'white', borderRadius: '8px', padding: '24px', marginBottom: '16px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)'}}>
+              <button 
+                className="faq-question" 
+                style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%', border: 'none', background: 'transparent', cursor: 'pointer', textAlign: 'left'}}
+                onClick={() => toggleFAQ(3)}
+                aria-expanded={faqOpen[3]}
+                aria-controls="faq-answer-4"
+              >
                 <h3 style={{fontSize: '20px', fontWeight: '600', color: '#0F172A', margin: '0'}}>What size transactions do you typically work on?</h3>
-                <span className="faq-icon" style={{fontSize: '24px', color: '#3B82F6', transition: 'transform 0.3s', transform: faqOpen[3] ? 'rotate(180deg)' : 'rotate(0deg)'}}>{faqOpen[3] ? '−' : '+'}</span>
-              </div>
-              <div className="faq-answer" style={{display: faqOpen[3] ? 'block' : 'none', marginTop: '16px', paddingTop: '16px', borderTop: '1px solid #E2E8F0', color: '#475569', lineHeight: '1.7'}}>
+                <span className="faq-icon" style={{fontSize: '24px', color: '#3B82F6', transition: 'transform 0.3s', transform: faqOpen[3] ? 'rotate(180deg)' : 'rotate(0deg)'}} aria-hidden="true">{faqOpen[3] ? '−' : '+'}</span>
+              </button>
+              <div id="faq-answer-4" className="faq-answer" style={{display: faqOpen[3] ? 'block' : 'none', marginTop: '16px', paddingTop: '16px', borderTop: '1px solid #E2E8F0', color: '#475569', lineHeight: '1.7'}}>
                 <p>We work on transactions ranging from €10M to €500M+ enterprise value. Our sweet spot is middle-market deals where PE funds and strategic acquirers need Big 4 quality analysis without Big 4 fees and timelines. If you're writing a €50M check, you deserve intelligence-grade due diligence.</p>
               </div>
             </div>
 
             {/* Question 5 */}
-            <div className="faq-item" style={{background: 'white', borderRadius: '8px', padding: '24px', marginBottom: '16px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)', cursor: 'pointer'}} onClick={() => toggleFAQ(4)}>
-              <div className="faq-question" style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+            <div className="faq-item" style={{background: 'white', borderRadius: '8px', padding: '24px', marginBottom: '16px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)'}}>
+              <button 
+                className="faq-question" 
+                style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%', border: 'none', background: 'transparent', cursor: 'pointer', textAlign: 'left'}}
+                onClick={() => toggleFAQ(4)}
+                aria-expanded={faqOpen[4]}
+                aria-controls="faq-answer-5"
+              >
                 <h3 style={{fontSize: '20px', fontWeight: '600', color: '#0F172A', margin: '0'}}>How do you ensure confidentiality during sensitive deals?</h3>
-                <span className="faq-icon" style={{fontSize: '24px', color: '#3B82F6', transition: 'transform 0.3s', transform: faqOpen[4] ? 'rotate(180deg)' : 'rotate(0deg)'}}>{faqOpen[4] ? '−' : '+'}</span>
-              </div>
-              <div className="faq-answer" style={{display: faqOpen[4] ? 'block' : 'none', marginTop: '16px', paddingTop: '16px', borderTop: '1px solid #E2E8F0', color: '#475569', lineHeight: '1.7'}}>
+                <span className="faq-icon" style={{fontSize: '24px', color: '#3B82F6', transition: 'transform 0.3s', transform: faqOpen[4] ? 'rotate(180deg)' : 'rotate(0deg)'}} aria-hidden="true">{faqOpen[4] ? '−' : '+'}</span>
+              </button>
+              <div id="faq-answer-5" className="faq-answer" style={{display: faqOpen[4] ? 'block' : 'none', marginTop: '16px', paddingTop: '16px', borderTop: '1px solid #E2E8F0', color: '#475569', lineHeight: '1.7'}}>
                 <p>We follow IC-standard operational security protocols: encrypted communications, need-to-know information compartmentalization, and formal NDAs with all parties. Our research methodology is designed for discrete OSINT collection that doesn't alert competitors or targets. We've supported transactions where market rumors would have killed the deal.</p>
               </div>
             </div>
 
             {/* Question 6 */}
-            <div className="faq-item" style={{background: 'white', borderRadius: '8px', padding: '24px', marginBottom: '16px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)', cursor: 'pointer'}} onClick={() => toggleFAQ(5)}>
-              <div className="faq-question" style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+            <div className="faq-item" style={{background: 'white', borderRadius: '8px', padding: '24px', marginBottom: '16px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)'}}>
+              <button 
+                className="faq-question" 
+                style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%', border: 'none', background: 'transparent', cursor: 'pointer', textAlign: 'left'}}
+                onClick={() => toggleFAQ(5)}
+                aria-expanded={faqOpen[5]}
+                aria-controls="faq-answer-6"
+              >
                 <h3 style={{fontSize: '20px', fontWeight: '600', color: '#0F172A', margin: '0'}}>Can you work alongside our existing advisors?</h3>
-                <span className="faq-icon" style={{fontSize: '24px', color: '#3B82F6', transition: 'transform 0.3s', transform: faqOpen[5] ? 'rotate(180deg)' : 'rotate(0deg)'}}>{faqOpen[5] ? '−' : '+'}</span>
-              </div>
-              <div className="faq-answer" style={{display: faqOpen[5] ? 'block' : 'none', marginTop: '16px', paddingTop: '16px', borderTop: '1px solid #E2E8F0', color: '#475569', lineHeight: '1.7'}}>
+                <span className="faq-icon" style={{fontSize: '24px', color: '#3B82F6', transition: 'transform 0.3s', transform: faqOpen[5] ? 'rotate(180deg)' : 'rotate(0deg)'}} aria-hidden="true">{faqOpen[5] ? '−' : '+'}</span>
+              </button>
+              <div id="faq-answer-6" className="faq-answer" style={{display: faqOpen[5] ? 'block' : 'none', marginTop: '16px', paddingTop: '16px', borderTop: '1px solid #E2E8F0', color: '#475569', lineHeight: '1.7'}}>
                 <p>Absolutely. We often complement Big 4 financial due diligence with deeper commercial and competitive intelligence, or provide second opinions on sell-side CDD reports. Think of us as your analytical Red Team—we pressure-test assumptions and surface risks others might miss. We integrate seamlessly with your existing advisor ecosystem.</p>
               </div>
             </div>
@@ -1172,16 +1349,16 @@ export default function Home() {
           </div>
 
           {/* CTA at bottom of FAQ */}
-          <div style={{textAlign: 'center', marginTop: '60px', paddingTop: '40px', borderTop: '1px solid #E2E8F0'}}>
+          <div style={{textAlign: 'center', marginTop: '60px', paddingTop: '40px', borderTop: '1px solid rgba(30, 58, 95, 0.15)'}}>
             <p style={{fontSize: '18px', color: '#475569', marginBottom: '24px'}}>Still have questions?</p>
-            <a href="#contact" style={{display: 'inline-block', padding: '14px 32px', background: '#0F172A', color: 'white', textDecoration: 'none', borderRadius: '6px', fontWeight: '600', transition: 'background 0.3s'}}>Schedule a Consultation</a>
+            <a href="#contact" style={{display: 'inline-block', padding: '14px 32px', background: 'linear-gradient(135deg, #0a1929 0%, #1e3a5f 50%, #2563eb 100%)', color: 'white', textDecoration: 'none', borderRadius: '6px', fontWeight: '600', transition: 'all 0.3s', boxShadow: '0 4px 12px rgba(10, 25, 41, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1)'}}>Schedule a Consultation</a>
           </div>
 
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12 px-6 lg:px-8">
+      <footer className="bg-gray-900 text-white py-8 px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
           {/* Footer Logo - White version for dark background */}
           <div className="footer-logo mb-6">
@@ -1225,12 +1402,12 @@ export default function Home() {
 
         .hero-section {
           position: relative;
-          min-height: 70vh;
+          min-height: 65vh;
           display: flex;
           align-items: center;
           justify-content: center;
           overflow: hidden;
-          padding: 80px 18px 64px; /* tightened to match global compaction */
+          padding: 60px 18px 48px;
         }
 
         .hero-background {
@@ -1275,7 +1452,7 @@ export default function Home() {
            ═══════════════════════════════════════════════════════ */
 
         .hero-logo-wrapper {
-          margin-bottom: 32px;
+          margin-bottom: 24px;
           animation: fadeInDown 0.5s cubic-bezier(0.2,0,0,1) both;
         }
 
@@ -1352,18 +1529,20 @@ export default function Home() {
            ═══════════════════════════════════════════════════════ */
 
         .faq-section {
-          background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+          background: linear-gradient(135deg, #f0f6ff 0%, #e8f1ff 100%);
         }
 
         .faq-item {
           transition: all 0.3s ease;
           border: 1px solid transparent;
+          box-shadow: 0 1px 3px rgba(10, 25, 41, 0.08);
         }
 
         .faq-item:hover {
           transform: translateY(-2px);
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-          border-color: #e2e8f0;
+          box-shadow: 0 4px 12px rgba(10, 25, 41, 0.12),
+                      0 2px 6px rgba(30, 58, 95, 0.08);
+          border-color: rgba(30, 58, 95, 0.15);
         }
 
         .faq-icon {
@@ -1373,12 +1552,14 @@ export default function Home() {
           width: 32px;
           height: 32px;
           border-radius: 50%;
-          background: rgba(59, 130, 246, 0.1);
+          background: linear-gradient(135deg, rgba(10, 25, 41, 0.08) 0%, rgba(30, 58, 95, 0.12) 100%);
+          box-shadow: inset 0 1px 2px rgba(30, 58, 95, 0.08);
           transition: all 0.3s ease;
         }
 
         .faq-item:hover .faq-icon {
-          background: rgba(59, 130, 246, 0.2);
+          background: linear-gradient(135deg, rgba(10, 25, 41, 0.15) 0%, rgba(30, 58, 95, 0.2) 100%);
+          box-shadow: 0 2px 6px rgba(30, 58, 95, 0.15);
         }
 
         .faq-answer {
@@ -1432,15 +1613,16 @@ export default function Home() {
            ═══════════════════════════════════════════════════════ */
 
         .hero-headline {
-          font-size: 56px;
-          font-weight: 800;
-          line-height: 1.08;
+          font-size: 64px;
+          font-weight: 700;
+          line-height: 1.1;
           color: #ffffff;
-          margin: 0 auto 20px;
-          max-width: 980px;
-          letter-spacing: -0.02em;
-          animation: fadeInUp 0.42s cubic-bezier(0.2,0,0,1) 0.12s both;
-          text-shadow: 0 2px 18px rgba(0, 0, 0, 0.28);
+          margin: 0 auto 24px;
+          max-width: 1000px;
+          letter-spacing: -0.03em;
+          animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+          text-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
         }
 
         .hero-headline-emphasis {
@@ -1460,7 +1642,7 @@ export default function Home() {
           font-weight: 500;
           line-height: 1.45;
           color: rgba(255, 255, 255, 0.95);
-          margin: 0 auto 18px;
+          margin: 0 auto 14px;
           max-width: 780px;
           animation: fadeInUp 0.46s cubic-bezier(0.2,0,0,1) 0.18s both;
         }
@@ -1473,7 +1655,7 @@ export default function Home() {
           font-size: 16px;
           line-height: 1.7;
           color: rgba(255, 255, 255, 0.85);
-          margin: 0 auto 40px;
+          margin: 0 auto 32px;
           max-width: 700px;
           animation: fadeInUp 0.5s cubic-bezier(0.2,0,0,1) 0.24s both;
         }
@@ -1494,21 +1676,24 @@ export default function Home() {
         .hero-cta-secondary {
           display: inline-flex;
           align-items: center;
-          gap: 8px;
-          padding: 18px 36px;
+          gap: 10px;
+          padding: 18px 40px;
           font-size: 16px;
           font-weight: 600;
           text-decoration: none;
-          border-radius: 10px;
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          border-radius: 12px;
+          transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
           position: relative;
           overflow: hidden;
+          letter-spacing: -0.01em;
         }
 
         .hero-cta-primary {
-          background: #ffffff;
-          color: #1e3a5f;
-          box-shadow: 0 4px 16px rgba(255, 255, 255, 0.2);
+          background: linear-gradient(to bottom, #ffffff 0%, #f8fafc 100%);
+          color: #0a1929;
+          box-shadow: 0 4px 16px rgba(255, 255, 255, 0.25),
+                      0 8px 24px rgba(10, 25, 41, 0.15);
+          border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .hero-cta-primary::before {
@@ -1518,7 +1703,7 @@ export default function Home() {
           left: 0;
           right: 0;
           bottom: 0;
-          background: linear-gradient(135deg, #3b82f6, #2563eb);
+          background: linear-gradient(135deg, #0a1929 0%, #1e3a5f 50%, #2563eb 100%);
           opacity: 0;
           transition: opacity 0.3s ease;
           z-index: -1;
@@ -1527,7 +1712,9 @@ export default function Home() {
         .hero-cta-primary:hover {
           color: #ffffff;
           transform: translateY(-2px);
-          box-shadow: 0 8px 24px rgba(255, 255, 255, 0.3);
+          box-shadow: 0 8px 24px rgba(255, 255, 255, 0.35),
+                      0 12px 36px rgba(10, 25, 41, 0.25);
+          border-color: rgba(255, 255, 255, 0.5);
         }
 
         .hero-cta-primary:hover::before {
@@ -1545,16 +1732,20 @@ export default function Home() {
         }
 
         .hero-cta-secondary {
-          background: rgba(255, 255, 255, 0.1);
+          background: rgba(10, 25, 41, 0.4);
           color: #ffffff;
           border: 2px solid rgba(255, 255, 255, 0.3);
           backdrop-filter: blur(10px);
+          box-shadow: 0 4px 16px rgba(10, 25, 41, 0.2),
+                      inset 0 1px 0 rgba(255, 255, 255, 0.1);
         }
 
         .hero-cta-secondary:hover {
-          background: rgba(255, 255, 255, 0.15);
+          background: rgba(10, 25, 41, 0.6);
           border-color: rgba(255, 255, 255, 0.5);
           transform: translateY(-2px);
+          box-shadow: 0 8px 24px rgba(10, 25, 41, 0.3),
+                      inset 0 1px 0 rgba(255, 255, 255, 0.15);
         }
 
         /* ═══════════════════════════════════════════════════════
@@ -1588,7 +1779,7 @@ export default function Home() {
            ═══════════════════════════════════════════════════════ */
 
         .services-section {
-          padding: 80px 18px 64px; /* tightened */
+          padding: 56px 18px 48px;
           background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
         }
 
@@ -1600,223 +1791,155 @@ export default function Home() {
         /* Section Header */
         .section-header {
           text-align: center;
-          margin-bottom: 80px;
+          margin-bottom: 48px;
         }
 
         .section-eyebrow {
           display: inline-block;
-          font-size: 14px;
+          font-size: 13px;
           font-weight: 600;
           text-transform: uppercase;
-          letter-spacing: 0.15em;
+          letter-spacing: 0.12em;
           color: #3b82f6;
-          margin-bottom: 16px;
+          margin-bottom: 20px;
+          padding: 8px 16px;
+          background: rgba(59, 130, 246, 0.08);
+          border-radius: 20px;
         }
 
         .section-title {
-          font-size: 48px;
-          font-weight: 800;
+          font-size: 52px;
+          font-weight: 700;
           color: #0f172a;
-          margin: 0 0 20px 0;
-          letter-spacing: -0.02em;
+          margin: 0 0 24px 0;
+          letter-spacing: -0.025em;
+          line-height: 1.15;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
         }
 
         .section-subtitle {
           font-size: 20px;
           color: #64748b;
           margin: 0 auto 32px;
-          max-width: 700px;
-          line-height: 1.6;
+          max-width: 720px;
+          line-height: 1.65;
+          font-weight: 400;
+          letter-spacing: -0.01em;
         }
 
         .section-divider {
           width: 80px;
           height: 4px;
-          background: linear-gradient(90deg, #3b82f6, #60a5fa);
+          background: linear-gradient(90deg, #0a1929, #1e3a5f, #3b82f6);
           margin: 0 auto;
           border-radius: 2px;
+          box-shadow: 0 2px 4px rgba(10, 25, 41, 0.2);
         }
 
-        /* Service Cards */
+        /* Service Cards - Rebuilt for Perfect Alignment */
+        .service-cards {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 32px;
+          grid-auto-rows: 1fr;
+        }
+
         .service-card {
           background: #ffffff;
-          padding: 20px; /* aggressive tightening */
-          margin-bottom: 20px;
-          border-radius: 10px;
-          box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06),
-                      0 2px 6px rgba(15, 23, 42, 0.03);
-          transition: transform 0.22s cubic-bezier(0.2, 0, 0.08, 1), box-shadow 0.22s ease;
+          padding: 40px;
+          border-radius: 16px;
+          box-shadow: 0 1px 3px rgba(10, 25, 41, 0.06),
+                      0 1px 2px rgba(10, 25, 41, 0.04);
+          border: 1px solid rgba(226, 232, 240, 0.8);
+          display: grid;
+          grid-template-rows: auto 1fr auto;
+          gap: 28px;
+          transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
           position: relative;
-          border: 1px solid #e8edf6;
-          display: flex; /* ensure consistent vertical layout */
-          flex-direction: column;
+          overflow: hidden;
         }
 
         .service-card::before {
-          content: attr(data-service);
+          content: '';
           position: absolute;
-          top: 18px;
-          right: 18px;
-          font-size: 80px;
-          font-weight: 900;
-          color: #f1f5f9;
-          line-height: 1;
-          pointer-events: none;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 3px;
+          background: linear-gradient(90deg, #0ea5e9, #3b82f6, #6366f1);
+          transform: scaleX(0);
+          transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .service-card:hover {
-          transform: translateY(-8px);
-          box-shadow: 0 12px 48px rgba(15, 23, 42, 0.12),
-                      0 8px 24px rgba(15, 23, 42, 0.08);
-          border-color: #cbd5e1;
+          transform: translateY(-6px);
+          box-shadow: 0 20px 40px rgba(10, 25, 41, 0.08),
+                      0 8px 16px rgba(10, 25, 41, 0.06);
+          border-color: rgba(203, 213, 225, 0.8);
         }
 
-        /* Service Header */
-        .service-header {
-          margin-bottom: 24px;
-          /* lock header to a consistent height so the deliverables section
-             on each card starts at the same vertical offset */
-          min-height: 120px;
+        .service-card:hover::before {
+          transform: scaleX(1);
         }
 
-        .service-number {
-          display: inline-block;
-          font-size: 14px;
-          font-weight: 700;
-          color: #3b82f6;
-          background: #eff6ff;
-          padding: 6px 16px;
-          border-radius: 20px;
-          margin-bottom: 20px;
-          letter-spacing: 0.05em;
+        .service-card-top {
+          /* Fixed height section - title and tagline */
         }
 
         .service-title {
           font-size: 32px;
           font-weight: 700;
           color: #0f172a;
-          margin: 0 0 12px 0;
-          line-height: 1.2;
+          margin: 0 0 20px 0;
+          line-height: 1.25;
+          letter-spacing: -0.02em;
         }
 
         .service-tagline {
-          font-size: 18px;
+          font-size: 17px;
           font-style: italic;
           color: #64748b;
           margin: 0;
-        }
-
-        /* Service Description */
-        .service-description {
-          margin-bottom: 24px;
-        }
-
-        .service-description p {
-          font-size: 17px;
-          line-height: 1.8;
-          color: #334155;
-          margin: 0;
-        }
-
-        /* Service For */
-        .service-for {
-          display: flex;
-          gap: 8px;
-          align-items: baseline;
-          padding: 20px;
-          background: #f8fafc;
-          border-left: 4px solid #3b82f6;
-          border-radius: 8px;
-          margin-bottom: 40px;
-        }
-
-        .for-label {
-          font-size: 15px;
-          font-weight: 700;
-          color: #0f172a;
-          flex-shrink: 0;
-        }
-
-        .for-text {
-          font-size: 15px;
-          color: #475569;
           line-height: 1.6;
         }
 
-        /* Deliverables Section */
-        .deliverables-section {
-          background: linear-gradient(135deg, #eff6ff 0%, #f8fafc 100%);
-          padding: 12px; /* tightened */
+        .service-deliverables {
+          background: linear-gradient(135deg, #e8f1ff 0%, #f0f6ff 100%);
+          padding: 20px;
           border-radius: 10px;
-          margin-bottom: 16px;
-          border: 1px solid #e6eefc;
-          min-height: 200px; /* ensure vertical alignment across cards */
+          border: 1px solid rgba(30, 58, 95, 0.12);
           display: flex;
           flex-direction: column;
-        }
-
-        .deliverables-heading {
-          display: flex;
-          align-items: center;
           gap: 12px;
-          font-size: 20px;
-          font-weight: 700;
-          color: #0f172a;
-          margin: 0 0 28px 0;
-        }
-
-        .heading-icon {
-          width: 24px;
-          height: 24px;
-          color: #3b82f6;
-          flex-shrink: 0;
-        }
-
-        .deliverables-list {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-          display: flex;
-          flex-direction: column;
-          gap: 10px; /* tighter, consistent with globals.css */
-          flex: 1 1 auto;
         }
 
         .deliverable-item {
           display: flex;
           align-items: flex-start;
           gap: 12px;
-          padding: 8px 6px;
-          background: #ffffff;
+          padding: 10px 12px;
+          background: rgba(255, 255, 255, 0.9);
           border-radius: 8px;
-          transition: all 0.22s ease;
-          border: 1px solid transparent;
+          transition: all 0.2s ease;
         }
 
         .deliverable-item:hover {
-          border-color: #bfdbfe;
-          box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
-          transform: translateX(8px);
+          background: #ffffff;
+          transform: translateX(4px);
+          box-shadow: 0 2px 6px rgba(10, 25, 41, 0.06);
         }
 
-        .check-icon {
+        .deliverable-item .check-icon {
           flex-shrink: 0;
-          width: 20px; /* align with globals.css sizing */
+          width: 20px;
           height: 20px;
-          color: #10b981;
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
+          color: #1e3a5f;
+          margin-top: 2px;
         }
 
-        .check-icon svg {
-          width: 100%;
-          height: 100%;
-        }
-
-        .deliverable-content {
-          font-size: 16px;
-          line-height: 1.7;
+        .deliverable-item span {
+          font-size: 15px;
+          line-height: 1.6;
           color: #334155;
         }
 
@@ -1840,14 +1963,15 @@ export default function Home() {
           padding: 16px 32px;
           font-size: 16px;
           font-weight: 600;
-          color: #3b82f6;
-          background: #ffffff;
-          border: 2px solid #3b82f6;
+          color: #1e3a5f;
+          background: linear-gradient(to bottom, #ffffff 0%, #f8fafc 100%);
+          border: 2px solid #1e3a5f;
           border-radius: 10px;
           text-decoration: none;
           transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
           position: relative;
           overflow: hidden;
+          box-shadow: 0 2px 8px rgba(10, 25, 41, 0.08);
         }
 
         .service-cta::before {
@@ -1857,7 +1981,7 @@ export default function Home() {
           left: 0;
           right: 0;
           bottom: 0;
-          background: linear-gradient(135deg, #3b82f6, #2563eb);
+          background: linear-gradient(135deg, #0a1929 0%, #1e3a5f 50%, #2563eb 100%);
           opacity: 0;
           transition: opacity 0.3s ease;
           z-index: -1;
@@ -1865,9 +1989,10 @@ export default function Home() {
 
         .service-cta:hover {
           color: #ffffff;
-          border-color: #3b82f6;
+          border-color: #0a1929;
           transform: translateY(-2px);
-          box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3);
+          box-shadow: 0 8px 24px rgba(10, 25, 41, 0.3),
+                      0 4px 12px rgba(30, 58, 95, 0.2);
         }
 
         .service-cta:hover::before {
@@ -1889,7 +2014,7 @@ export default function Home() {
            ═══════════════════════════════════════════════════════ */
 
         .industries-section {
-          padding: 120px 20px;
+          padding: 96px 20px 80px;
           background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
           position: relative;
         }
@@ -1906,8 +2031,8 @@ export default function Home() {
         .industries-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 32px;
-          margin-bottom: 56px;
+          gap: 24px;
+          margin-bottom: 40px;
         }
 
         /* ═══════════════════════════════════════════════════════
@@ -1916,11 +2041,12 @@ export default function Home() {
 
         .industry-card {
           background: #ffffff;
-          padding: 40px 32px;
-          border-radius: 16px;
+          padding: 36px 28px;
+          border-radius: 20px;
           text-align: center;
-          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-          border: 2px solid #e2e8f0;
+          transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+          border: 1px solid rgba(226, 232, 240, 0.6);
+          box-shadow: 0 1px 3px rgba(10, 25, 41, 0.04);
           position: relative;
           overflow: hidden;
         }
@@ -1932,7 +2058,7 @@ export default function Home() {
           left: 0;
           right: 0;
           height: 4px;
-          background: linear-gradient(90deg, #3b82f6, #60a5fa);
+          background: linear-gradient(90deg, #0a1929, #1e3a5f, #3b82f6);
           transform: scaleX(0);
           transform-origin: left;
           transition: transform 0.4s ease;
@@ -1940,10 +2066,10 @@ export default function Home() {
 
         .industry-card:hover {
           background: #ffffff;
-          border-color: #3b82f6;
-          transform: translateY(-8px);
-          box-shadow: 0 12px 32px rgba(59, 130, 246, 0.15),
-                      0 4px 12px rgba(59, 130, 246, 0.1);
+          border-color: rgba(203, 213, 225, 0.8);
+          transform: translateY(-12px) scale(1.02);
+          box-shadow: 0 20px 40px rgba(10, 25, 41, 0.1),
+                      0 8px 16px rgba(10, 25, 41, 0.06);
         }
 
         .industry-card:hover::before {
@@ -1961,8 +2087,10 @@ export default function Home() {
           display: flex;
           align-items: center;
           justify-content: center;
-          background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+          background: linear-gradient(135deg, #e8f1ff 0%, #d6e5ff 100%);
           border-radius: 16px;
+          box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.8),
+                      0 2px 8px rgba(30, 58, 95, 0.08);
           transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
           position: relative;
         }
@@ -1972,7 +2100,7 @@ export default function Home() {
           position: absolute;
           inset: 0;
           border-radius: 16px;
-          background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+          background: linear-gradient(135deg, #0a1929 0%, #1e3a5f 50%, #2563eb 100%);
           opacity: 0;
           transition: opacity 0.4s ease;
         }
@@ -2004,16 +2132,17 @@ export default function Home() {
            ═══════════════════════════════════════════════════════ */
 
         .industry-heading {
-          font-size: 20px;
+          font-size: 22px;
           font-weight: 700;
           color: #0f172a;
           margin: 0 0 16px 0;
           line-height: 1.3;
+          letter-spacing: -0.01em;
           transition: color 0.3s ease;
         }
 
         .industry-card:hover .industry-heading {
-          color: #1e40af;
+          color: #1e3a5f;
         }
 
         .industry-description {
@@ -2039,8 +2168,9 @@ export default function Home() {
           color: #3b82f6;
           text-decoration: none;
           font-weight: 600;
-          transition: all 0.2s ease;
+          transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
           position: relative;
+          display: inline-block;
         }
 
         .industries-link::after {
@@ -2050,14 +2180,15 @@ export default function Home() {
           left: 0;
           right: 0;
           height: 2px;
-          background: #3b82f6;
+          background: linear-gradient(90deg, #3b82f6, #2563eb);
           transform: scaleX(0);
           transform-origin: right;
-          transition: transform 0.3s ease;
+          transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .industries-link:hover {
           color: #2563eb;
+          transform: translateX(4px);
         }
 
         .industries-link:hover::after {
@@ -2070,7 +2201,7 @@ export default function Home() {
            ═══════════════════════════════════════════════════════ */
 
         .methodology-section {
-          padding: 80px 18px; /* tightened */
+          padding: 96px 18px 80px;
           background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
         }
 
@@ -2084,8 +2215,8 @@ export default function Home() {
            ═══════════════════════════════════════════════════════ */
 
         .contact-section {
-          padding: 60px 20px;
-          background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+          padding: 96px 20px 80px;
+          background: linear-gradient(180deg, #f8fafc 0%, #e8f1ff 100%);
         }
 
         .contact-container {
@@ -2135,6 +2266,11 @@ export default function Home() {
           .hero-cta-secondary {
             width: 100%;
             justify-content: center;
+          }
+
+          .service-cards {
+            grid-template-columns: 1fr;
+            gap: 20px;
           }
 
           .services-section {
@@ -2257,10 +2393,11 @@ export default function Home() {
         .methodology-problem {
           margin-bottom: 48px;
           padding: 32px; /* tightened */
-          background: #ffffff;
+          background: linear-gradient(to right, #ffffff 0%, #fafbfc 100%);
           border-radius: 12px;
           border-left: 6px solid #ef4444;
-          box-shadow: 0 4px 18px rgba(239, 68, 68, 0.07);
+          box-shadow: 0 4px 18px rgba(239, 68, 68, 0.07),
+                      0 2px 8px rgba(10, 25, 41, 0.04);
         }
 
         .problem-heading {
@@ -2286,16 +2423,19 @@ export default function Home() {
         }
 
         .problem-card {
-          background: #fef2f2;
+          background: linear-gradient(to bottom, #fef2f2 0%, #fef9f9 100%);
           padding: 32px;
           border-radius: 12px;
           border: 2px solid #fee2e2;
+          box-shadow: 0 2px 8px rgba(239, 68, 68, 0.06),
+                      inset 0 1px 0 rgba(255, 255, 255, 0.6);
           transition: all 0.3s ease;
         }
 
         .problem-card:hover {
           border-color: #fca5a5;
-          box-shadow: 0 4px 12px rgba(239, 68, 68, 0.15);
+          box-shadow: 0 4px 12px rgba(239, 68, 68, 0.15),
+                      0 2px 6px rgba(10, 25, 41, 0.05);
         }
 
         .problem-icon {
@@ -2326,9 +2466,11 @@ export default function Home() {
         .methodology-diagnosis {
           margin-bottom: 80px;
           padding: 48px 60px;
-          background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+          background: linear-gradient(135deg, #e8f1ff 0%, #dce7f5 100%);
           border-radius: 20px;
-          border: 2px solid #cbd5e1;
+          border: 2px solid rgba(30, 58, 95, 0.15);
+          box-shadow: inset 0 2px 4px rgba(30, 58, 95, 0.04),
+                      0 4px 16px rgba(10, 25, 41, 0.06);
         }
 
         .diagnosis-heading {
@@ -2384,6 +2526,7 @@ export default function Home() {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
           gap: 32px;
+          grid-auto-rows: 1fr;
         }
 
         /* ═══════════════════════════════════════════════════════════════
@@ -2391,18 +2534,32 @@ export default function Home() {
            ═══════════════════════════════════════════════════════════════ */
 
         .solution-card {
-          background: #ffffff;
+          background: linear-gradient(to bottom, #ffffff 0%, #fafbfc 100%);
           padding: 40px;
           border-radius: 16px;
-          border: 2px solid #e0e7ff;
+          border: 2px solid #e8edf4;
+          border-top: 2px solid rgba(30, 58, 95, 0.12);
+          box-shadow: 0 4px 12px rgba(10, 25, 41, 0.05);
           position: relative;
           transition: all 0.3s ease;
+          display: grid;
+          grid-template-rows: 1fr auto;
+          align-content: start;
         }
 
         .solution-card:hover {
-          border-color: #3b82f6;
-          box-shadow: 0 8px 32px rgba(59, 130, 246, 0.15);
+          border-color: rgba(30, 58, 95, 0.25);
+          border-top-color: rgba(10, 25, 41, 0.3);
+          box-shadow: 0 8px 32px rgba(10, 25, 41, 0.12),
+                      0 4px 16px rgba(30, 58, 95, 0.08),
+                      0 0 0 1px rgba(30, 58, 95, 0.06);
           transform: translateY(-4px);
+        }
+
+        .solution-card-content {
+          display: flex;
+          flex-direction: column;
+          min-height: 0;
         }
 
         .solution-badge {
@@ -2411,12 +2568,15 @@ export default function Home() {
           justify-content: center;
           width: 48px;
           height: 48px;
-          background: linear-gradient(135deg, #3b82f6, #2563eb);
+          background: linear-gradient(135deg, #0a1929 0%, #1e3a5f 50%, #2563eb 100%);
           color: #ffffff;
           font-size: 18px;
           font-weight: 700;
           border-radius: 12px;
           margin-bottom: 20px;
+          box-shadow: 0 4px 12px rgba(10, 25, 41, 0.25),
+                      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+          flex-shrink: 0;
         }
 
         .solution-card-heading {
@@ -2425,29 +2585,34 @@ export default function Home() {
           color: #0f172a;
           margin: 0 0 16px 0;
           line-height: 1.3;
+          flex-shrink: 0;
         }
 
         .solution-description {
           font-size: 16px;
           line-height: 1.7;
           color: #475569;
-          margin: 0 0 20px 0;
+          margin: 0;
+          flex-shrink: 0;
         }
 
         .solution-description strong {
-          color: #1e40af;
+          color: #1e3a5f;
           font-weight: 700;
         }
 
         .solution-result {
           padding: 16px 20px;
-          background: #eff6ff;
-          border-left: 4px solid #3b82f6;
+          background: linear-gradient(to right, #e8f1ff 0%, #eff6ff 100%);
+          border-left: 4px solid #1e3a5f;
           border-radius: 8px;
+          box-shadow: inset 0 1px 2px rgba(30, 58, 95, 0.04);
+          margin-top: 20px;
+          align-self: end;
         }
 
         .solution-result strong {
-          color: #1e40af;
+          color: #0a1929;
           font-weight: 600;
           display: block;
           margin-bottom: 4px;

@@ -148,7 +148,7 @@ html {
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(18px);
   }
   to {
     opacity: 1;
@@ -157,7 +157,7 @@ html {
 }
 
 .animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out;
+  animation: fadeInUp 0.42s cubic-bezier(0.2, 0, 0, 1) both;
 }
 
 /* Professional focus states */
@@ -171,12 +171,12 @@ select:focus {
 
 /* Professional hover states */
 .hover-lift {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.18s cubic-bezier(0.2,0,0,1), box-shadow 0.18s ease;
 }
 
 .hover-lift:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
 }
 
 /* Professional text selection */
@@ -234,9 +234,9 @@ a:hover {
 /* Hero Section Container */
 .hero-section {
   background: linear-gradient(135deg, #0a1929 0%, #1e3a5f 100%);
-  padding: 120px 20px 100px;
+  padding: 80px 18px 64px; /* compressed for tighter above-the-fold */
   text-align: center;
-  min-height: 90vh;
+  min-height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -290,9 +290,9 @@ a:hover {
 .value-props-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+  gap: 18px; /* tightened */
   max-width: 1000px;
-  margin: 0 auto 48px;
+  margin: 0 auto 36px;
 }
 
 /* Value Card */
@@ -384,17 +384,19 @@ a:hover {
 /* Service Card Base */
 .service-card {
   background: #ffffff;
-  padding: 48px;
-  margin-bottom: 32px;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-  transition: all 0.3s ease;
+  padding: 20px; /* aggressive tightening */
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  transition: transform 0.22s cubic-bezier(0.2, 0, 0.08, 1), box-shadow 0.22s ease;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .service-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
 }
 
 /* Service Number */
@@ -405,6 +407,15 @@ a:hover {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 16px;
+}
+
+/* Service cards layout */
+.service-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px; /* tighter grid gap */
+  align-items: start;
+  width: 100%;
 }
 
 /* Service Title */
@@ -435,9 +446,13 @@ a:hover {
 /* Deliverables Section */
 .deliverables-section {
   background: #f8f9fa;
-  padding: 32px;
+  padding: 12px; /* tight */
   border-radius: 8px;
-  margin: 32px 0;
+  margin: 12px 0; /* tightened vertical margin */
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto; /* allow the blue box to stretch to match other cards */
+  min-height: 200px; /* consistent but slightly reduced */
 }
 
 .deliverables-heading {
@@ -451,33 +466,32 @@ a:hover {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* fixed spacing between bullets */
 }
 
 .deliverable-item {
   display: flex;
-  align-items: flex-start;
-  margin-bottom: 16px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid #e5e7eb;
+  align-items: center;
+  margin: 0;
+  padding: 6px 0;
 }
-
-.deliverable-item:last-child {
-  margin-bottom: 0;
-  padding-bottom: 0;
-  border-bottom: none;
+.deliverable-item + .deliverable-item {
+  border-top: 1px solid rgba(0,0,0,0.04);
 }
 
 .check-icon {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
-  color: #2c3e50;
-  margin-right: 12px;
+  color: #16a34a; /* green check */
+  margin-right: 8px;
   flex-shrink: 0;
 }
 
 .deliverable-content {
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 15px;
+  line-height: 1.45;
   color: #1a202c;
 }
 
@@ -489,16 +503,21 @@ a:hover {
 /* Service CTA Button */
 .service-cta {
   display: inline-block;
-  padding: 14px 32px;
+  padding: 12px 24px;
   border: 2px solid #2c3e50;
   border-radius: 6px;
   background: transparent;
   color: #2c3e50;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   text-decoration: none;
-  transition: all 0.2s ease;
-  margin-top: 16px;
+  transition: transform 0.22s ease, background 0.22s ease;
+  margin-top: 12px;
+}
+
+/* Ensure CTA sits at the bottom of the card and inner boxes align */
+.service-cta-wrapper {
+  margin-top: auto;
 }
 
 .service-cta:hover {
@@ -535,9 +554,9 @@ a:hover {
   right: 0;
   z-index: 1000;
   background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
 }
 
 /* Transparent at top of page */
@@ -549,8 +568,8 @@ a:hover {
 .nav-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
-  height: 80px;
+  padding: 0 16px;
+  height: 64px;
   display: flex;
   align-items: center;
   justify-content: space-between;

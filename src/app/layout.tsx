@@ -9,15 +9,15 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Daniel Risk Intelligence | Transaction Advisory for CEE",
+  title: "Intelligence-Grade Analysis for Central & Eastern Europe",
   description: "Two advisory reports—Geopolitical Intelligence and Due Diligence—combine intelligence-community rigor with clear business language for CEE executives.",
-  keywords: ["CEE due diligence", "Central Europe M&A", "Poland market entry", "transaction advisory", "risk intelligence"],
+  keywords: ["CEE due diligence", "Central Europe transactions", "Poland market entry", "transaction advisory", "risk intelligence"],
   authors: [{ name: "Daniel Risk Intelligence" }],
   icons: {
     icon: "/favicon.ico",
   },
   openGraph: {
-    title: "Daniel Risk Intelligence | Transaction Advisory for CEE",
+    title: "Intelligence-Grade Analysis for Central & Eastern Europe",
   description: "Two advisory reports—Geopolitical Intelligence and Due Diligence—combine intelligence-community rigor with clear business language for CEE executives.",
     url: "https://www.danielriskintelligence.com",
     siteName: "Daniel Risk Intelligence",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Daniel Risk Intelligence",
+    title: "Intelligence-Grade Analysis for Central & Eastern Europe",
   description: "Two advisory reports—Geopolitical Intelligence and Due Diligence—combine intelligence-community rigor with clear business language for CEE executives.",
   },
 };
