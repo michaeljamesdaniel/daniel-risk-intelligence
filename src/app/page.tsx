@@ -429,7 +429,7 @@ export default function Home() {
                   <h3 className="text-xl font-bold text-white leading-tight">Geopolitical Intelligence Report</h3>
                 </div>
                 <p className="text-blue-50 text-sm leading-snug mt-2">
-                  Stay ahead of policy shifts that could impact your CEE operations—with euro-quantified risk assessments for the next 12-24 months
+                  Understand how political and regulatory shifts will impact your CEE operations—with scenario planning and early-warning indicators for the next 12-24 months.
                 </p>
               </div>
 
@@ -443,13 +443,13 @@ export default function Home() {
                   Key Deliverables
                 </h4>
                 <div className="space-y-3 mb-6 flex-grow">
-                  <div className="flex items-start gap-2.5 p-2.5 bg-white border border-[#d0dbe8] rounded-lg hover:border-[#2c5282] hover:shadow-md transition-all">
+                  <div className="flex items-start gap-3 p-3 bg-white border border-[#d0dbe8] rounded-lg hover:border-[#2c5282] hover:shadow-md transition-all">
                     <div className="flex-shrink-0 w-5 h-5 bg-[#1e3a5f] rounded-full flex items-center justify-center mt-0.5">
                       <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
                       </svg>
                     </div>
-                    <span className="text-gray-800 text-sm leading-snug">Protect budgets from €3-5M in unexpected compliance costs</span>
+                    <span className="text-gray-800 text-sm leading-relaxed">Identify policy changes that could affect your supply chain, market access, or costs</span>
                   </div>
                   <div className="flex items-start gap-3 p-3 bg-white border border-[#d0dbe8] rounded-lg hover:border-[#2c5282] hover:shadow-md transition-all">
                     <div className="flex-shrink-0 w-5 h-5 bg-[#1e3a5f] rounded-full flex items-center justify-center mt-0.5">
@@ -457,31 +457,47 @@ export default function Home() {
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
                       </svg>
                     </div>
-                    <span className="text-gray-800 text-sm leading-relaxed">Secure suppliers before regulatory changes raise input costs 20%</span>
+                    <span className="text-gray-800 text-sm leading-relaxed">Quantify financial impact (EUR amounts, not vague risk descriptions)</span>
                   </div>
-                  <div className="flex items-start gap-2.5 p-2.5 bg-white border border-[#d0dbe8] rounded-lg hover:border-[#2c5282] hover:shadow-md transition-all">
+                  <div className="flex items-start gap-3 p-3 bg-white border border-[#d0dbe8] rounded-lg hover:border-[#2c5282] hover:shadow-md transition-all">
                     <div className="flex-shrink-0 w-5 h-5 bg-[#1e3a5f] rounded-full flex items-center justify-center mt-0.5">
                       <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
                       </svg>
                     </div>
-                    <span className="text-gray-800 text-sm leading-snug">Track government policy shifts affecting market access</span>
+                    <span className="text-gray-800 text-sm leading-relaxed">Track early-warning signals with specific measurable thresholds</span>
                   </div>
-                  <div className="flex items-start gap-2.5 p-2.5 bg-white border border-[#d0dbe8] rounded-lg hover:border-[#2c5282] hover:shadow-md transition-all">
+                  <div className="flex items-start gap-3 p-3 bg-white border border-[#d0dbe8] rounded-lg hover:border-[#2c5282] hover:shadow-md transition-all">
                     <div className="flex-shrink-0 w-5 h-5 bg-[#1e3a5f] rounded-full flex items-center justify-center mt-0.5">
                       <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
                       </svg>
                     </div>
-                    <span className="text-gray-800 text-sm leading-snug">Monitor early-warning signals with numeric thresholds</span>
+                    <span className="text-gray-800 text-sm leading-relaxed">Develop best-case, base-case, and worst-case scenarios with probability ranges</span>
                   </div>
-                  <div className="flex items-start gap-2.5 p-2.5 bg-white border border-[#d0dbe8] rounded-lg hover:border-[#2c5282] hover:shadow-md transition-all">
+                  <div className="flex items-start gap-3 p-3 bg-white border border-[#d0dbe8] rounded-lg hover:border-[#2c5282] hover:shadow-md transition-all">
                     <div className="flex-shrink-0 w-5 h-5 bg-[#1e3a5f] rounded-full flex items-center justify-center mt-0.5">
                       <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
                       </svg>
                     </div>
-                    <span className="text-gray-800 text-sm leading-snug">Best, base, and worst scenarios with probability ranges</span>
+                    <span className="text-gray-800 text-sm leading-relaxed">Document monitoring plan so you catch threats before they materialize</span>
+                  </div>
+                  <div className="flex items-start gap-3 p-3 bg-white border border-[#d0dbe8] rounded-lg hover:border-[#2c5282] hover:shadow-md transition-all">
+                    <div className="flex-shrink-0 w-5 h-5 bg-[#1e3a5f] rounded-full flex items-center justify-center mt-0.5">
+                      <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                      </svg>
+                    </div>
+                    <span className="text-gray-800 text-sm leading-relaxed">Clarify regulatory enforcement priorities and compliance vulnerability periods</span>
+                  </div>
+                  <div className="flex items-start gap-3 p-3 bg-white border border-[#d0dbe8] rounded-lg hover:border-[#2c5282] hover:shadow-md transition-all">
+                    <div className="flex-shrink-0 w-5 h-5 bg-[#1e3a5f] rounded-full flex items-center justify-center mt-0.5">
+                      <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                      </svg>
+                    </div>
+                    <span className="text-gray-800 text-sm leading-relaxed">Assess geopolitical escalation pathways and operational contingencies</span>
                   </div>
                 </div>
 
