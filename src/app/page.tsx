@@ -582,18 +582,18 @@ export default function Home() {
                 </div>
 
                 {/* Report Details */}
-                <div className="flex items-center justify-between mb-5 p-4 bg-[#e6eef7] border border-[#2c5282] rounded-lg">
-                  <div className="flex items-center gap-2 text-[#0a1929]">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="flex items-center justify-between mb-5 p-4 bg-[#e6eef7] border border-[#2c5282] rounded-lg w-full">
+                  <div className="flex items-center gap-2 text-[#0a1929] flex-1 justify-start">
+                    <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                     </svg>
-                    <span className="font-bold text-sm">8-15 pages</span>
+                    <span className="font-bold text-sm whitespace-nowrap">8-15 pages</span>
                   </div>
-                  <div className="flex items-center gap-2 text-[#0a1929]">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="flex items-center gap-2 text-[#0a1929] flex-1 justify-end">
+                    <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
                     </svg>
-                    <span className="font-bold text-sm">2-4 weeks</span>
+                    <span className="font-bold text-sm whitespace-nowrap">2-4 weeks</span>
                   </div>
                 </div>
 
