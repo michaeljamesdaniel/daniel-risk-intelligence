@@ -359,7 +359,7 @@ export default function Home() {
           <h1 className="hero-headline">Intelligence-Grade Analysis for Central & Eastern Europe</h1>
           
           {/* Subheadline */}
-          <h2 className="hero-subheadline">
+          <h2 className="hero-subheadline" style={{marginBottom: '2.5rem'}}>
             McKinsey-quality analysis. U.S. Intelligence Community rigor.
           </h2>
           
@@ -398,7 +398,7 @@ export default function Home() {
               <span className="text-sm font-semibold text-[#1e3a5f] uppercase tracking-wide">What We Deliver</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 leading-tight">
-              Intelligence-Grade Advisory Reports
+              Advisory Reports
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
               Two specialized reports combining intelligence-community rigor with actionable business insights for high-stakes CEE transactions
