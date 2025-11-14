@@ -1115,9 +1115,8 @@ export default function Home() {
                         <SelectValue placeholder="Select a service" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="due-diligence">Due Diligence Reports</SelectItem>
-                        <SelectItem value="market-entry">Market Entry Strategy</SelectItem>
-                        <SelectItem value="integration">Integration Planning</SelectItem>
+                        <SelectItem value="due-diligence">Due Diligence</SelectItem>
+                        <SelectItem value="geopolitical-intelligence">Geopolitical Intelligence</SelectItem>
                         <SelectItem value="other">Other</SelectItem>
                       </SelectContent>
                     </Select>
