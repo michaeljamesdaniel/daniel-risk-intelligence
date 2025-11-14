@@ -767,7 +767,7 @@ export default function Home() {
           {/* Section Header */}
           <header className="section-header">
             <span className="section-eyebrow">Our Methodology</span>
-            <h2 className="section-title">Why Most Transaction Advisory Gets It Wrong—And How We Get It Right</h2>
+            <h2 className="section-title">Why Most Consultants Get It Wrong, And How We Get It Right</h2>
             <p className="section-subtitle">
               CEE executives don't need more opinions. They need defensible intelligence.
             </p>
