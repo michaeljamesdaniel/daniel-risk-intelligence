@@ -363,11 +363,6 @@ export default function Home() {
             McKinsey-quality analysis. U.S. Intelligence Community rigor.
           </h2>
           
-          {/* Body Copy */}
-          <p className="hero-body">
-            Tested conclusions. Precision-calibrated probabilities. Stated confidence levels. Written in plain English.
-          </p>
-          
           {/* CTA Button */}
           <div className="hero-cta-wrapper">
             <a href="#contact" className="hero-cta-primary">
