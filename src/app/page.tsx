@@ -614,6 +614,26 @@ export default function Home() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
               </svg>
             </a>
+            
+            {/* Quote Section */}
+            <div className="mt-8 pt-8 border-t border-blue-400/30">
+              <div className="max-w-3xl mx-auto">
+                <svg className="w-8 h-8 text-blue-300/40 mb-4 mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                </svg>
+                <blockquote className="space-y-4">
+                  <p className="text-blue-50 text-base md:text-lg italic leading-relaxed">
+                    "Around 56% of all mergers and acquisitions turn out to be failures..."
+                  </p>
+                  <p className="text-blue-50 text-base md:text-lg italic leading-relaxed">
+                    "The success of an M&A project depends to a large extent on optimal transaction preparation, fast transaction execution and the experience of the parties involved."
+                  </p>
+                  <footer className="text-blue-200/80 text-sm font-medium pt-2">
+                    — Dreher & Ernst, <cite className="font-normal italic">Mergers & Acquisitions</cite>
+                  </footer>
+                </blockquote>
+              </div>
+            </div>
           </div>
 
         </div>
