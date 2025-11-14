@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server';
-import ZAI from 'z-ai-web-dev-sdk';
 
 export async function POST(request: NextRequest) {
   try {
@@ -28,35 +27,20 @@ export async function POST(request: NextRequest) {
 New Contact Form Submission
 
 Name: ${name}
-Company: ${company}
+Company: ${company || 'Not provided'}
 Email: ${email}
 Phone: ${phone || 'Not provided'}
-Service: ${service}
+Service: ${service || 'Not specified'}
 
 Message:
-${comments}
+${comments || 'No message provided'}
     `.trim();
 
-    // Use ZAI SDK to send email notification
-    const zai = await ZAI.create();
-    
-    // Send notification using ZAI (you can customize this based on your needs)
-    await zai.chat.completions.create({
-      messages: [
-        {
-          role: 'system',
-          content: 'You are a notification system. Simply acknowledge the contact form submission.'
-        },
-        {
-          role: 'user',
-          content: `New contact form submission from ${name} (${email}) at ${company}. Service: ${service}. Message: ${comments}`
-        }
-      ],
-    });
-
-    // For production, you would integrate with an email service like Nodemailer
-    // For now, we'll log the submission and return success
+    // Log the submission
     console.log('Contact form submission:', emailContent);
+    
+    // For production, you would integrate with an email service like SendGrid, Nodemailer, etc.
+    // For now, we're just logging the submission
 
     return NextResponse.json(
       { message: 'Message sent successfully' },
