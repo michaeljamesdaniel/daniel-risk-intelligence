@@ -6,10 +6,10 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const { name, company, email, phone, service, comments } = body;
 
-    // Validate required fields
-    if (!name || !company || !email || !service || !comments) {
+    // Validate required fields (only name and email are required)
+    if (!name || !email) {
       return NextResponse.json(
-        { error: 'All required fields must be filled' },
+        { error: 'Name and email are required' },
         { status: 400 }
       );
     }
