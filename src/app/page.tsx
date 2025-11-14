@@ -317,8 +317,8 @@ export default function Home() {
           
           {/* Logo */}
           <div className="hero-logo-wrapper">
-            <div style={{textAlign: 'center', marginBottom: '2rem'}}>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 90" style={{height: '100px', width: 'auto', display: 'block', margin: '0 auto'}}>
+            <div style={{textAlign: 'center', marginBottom: '2rem', padding: '0 1rem'}}>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 90" style={{height: 'auto', width: '100%', maxWidth: '380px', maxHeight: '100px', display: 'block', margin: '0 auto'}}>
                 <path d="M 18,20 L 18,70 L 42,70 C 58,70 68,60 68,45 C 68,30 58,20 42,20 Z"
                       fill="none"
                       stroke="#FFFFFF"
