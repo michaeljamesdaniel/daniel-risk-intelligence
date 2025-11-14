@@ -729,7 +729,7 @@ export default function Home() {
           
           {/* Bottom Note */}
           <p className="industries-note">
-            Working on a deal in a different sector? 
+            Working on a deal in a different sector?{' '}
             <a href="#contact" className="industries-link">
               Let's discuss your specific situation →
             </a>
@@ -811,7 +811,7 @@ export default function Home() {
             <p className="diagnosis-text">
               Traditional firms rely on <strong>partner experience and brand reputation</strong>. 
               That works for familiar markets and standard situations. But CEE deals are different—
-              less transparent data, rapidly changing regulations, unreliable local sources. 
+              less transparent data, rapidly changing regulations, unreliable local sources.{' '}
               <strong>Experience isn't enough when the context keeps shifting.</strong>
             </p>
             <p className="diagnosis-text">
