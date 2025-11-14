@@ -365,9 +365,7 @@ export default function Home() {
           
           {/* Body Copy */}
           <p className="hero-body">
-            We help private equity and corporate investors make confident acquisition 
-            and expansion decisions across CEE using U.S. intelligence methods—transparent 
-            evidence, tested conclusions, stated confidence levels.
+            Tested conclusions. Precision-calibrated probabilities. Stated confidence levels. Written in plain English.
           </p>
           
           {/* CTA Button */}
