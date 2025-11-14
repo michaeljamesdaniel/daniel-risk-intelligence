@@ -495,7 +495,7 @@ export default function Home() {
                 </div>
 
                 {/* CTA Button */}
-                <a href="/CEE-Energy-Report Final.pdf" target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-gradient-to-r from-[#2c5282] to-[#1e3a5f] hover:from-[#1e3a5f] hover:to-[#0a1929] text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-xl transform hover:-translate-y-0.5 flex-shrink-0">
+                <a href="/CEE-Energy-Report-Final.pdf" target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-gradient-to-r from-[#2c5282] to-[#1e3a5f] hover:from-[#1e3a5f] hover:to-[#0a1929] text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-xl transform hover:-translate-y-0.5 flex-shrink-0">
                   <span className="text-white">Download Example Report</span>
                   <svg className="inline-block w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
