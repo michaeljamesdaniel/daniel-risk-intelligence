@@ -1375,7 +1375,7 @@ export default function Home() {
             {/* Footer Logo - White version for dark background */}
             <div className="footer-logo mb-6">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 90" style={{height: '50px', width: 'auto', display: 'block'}}>
-                <g transform="translate(-15, 0)">
+                <g transform="translate(5, 0)">
                   <path d="M 18,20 L 18,70 L 42,70 C 58,70 68,60 68,45 C 68,30 58,20 42,20 Z" 
                         fill="none" stroke="#FFFFFF" strokeWidth="2.5" strokeLinecap="square" opacity="0.95"/>
                   <line x1="92" y1="28" x2="92" y2="62" stroke="#FFFFFF" strokeWidth="1" opacity="0.2"/>
