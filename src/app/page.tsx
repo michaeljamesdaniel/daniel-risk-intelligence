@@ -478,7 +478,7 @@ export default function Home() {
                 </div>
 
                 {/* Report Details */}
-                <div className="flex items-center justify-between mb-5 p-4 bg-[#e6eef7] border border-[#2c5282] rounded-lg w-full">
+                <div className="flex items-center justify-between p-4 bg-[#e6eef7] border border-[#2c5282] rounded-lg w-full">
                   <div className="flex items-center gap-2 text-[#0a1929] flex-1 justify-start">
                     <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
@@ -492,14 +492,6 @@ export default function Home() {
                     <span className="font-bold text-sm whitespace-nowrap">2-3 weeks</span>
                   </div>
                 </div>
-
-                {/* CTA Button */}
-                <a href="/CEE-Energy-Report-Final.pdf" target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-gradient-to-r from-[#2c5282] to-[#1e3a5f] hover:from-[#1e3a5f] hover:to-[#0a1929] text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-xl transform hover:-translate-y-0.5 flex-shrink-0">
-                  <span className="text-white">Download Example Report</span>
-                  <svg className="inline-block w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                  </svg>
-                </a>
               </div>
             </div>
 
@@ -574,7 +566,7 @@ export default function Home() {
                 </div>
 
                 {/* Report Details */}
-                <div className="flex items-center justify-between mb-5 p-4 bg-[#e6eef7] border border-[#2c5282] rounded-lg w-full">
+                <div className="flex items-center justify-between p-4 bg-[#e6eef7] border border-[#2c5282] rounded-lg w-full">
                   <div className="flex items-center gap-2 text-[#0a1929] flex-1 justify-start">
                     <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
@@ -588,14 +580,6 @@ export default function Home() {
                     <span className="font-bold text-sm whitespace-nowrap">2-4 weeks</span>
                   </div>
                 </div>
-
-                {/* CTA Button */}
-                <a href="/Poland_Automotive_DD_Phase1.pdf" target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-gradient-to-r from-[#2c5282] to-[#1e3a5f] hover:from-[#1e3a5f] hover:to-[#0a1929] text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-xl transform hover:-translate-y-0.5 flex-shrink-0">
-                  <span className="text-white">Download Example Report</span>
-                  <svg className="inline-block w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                  </svg>
-                </a>
               </div>
             </div>
             
